@@ -57,6 +57,7 @@
     curl
     waybar
     hyprpaper
+    pavucontrol
   ];
 
   programs.hyprland = {

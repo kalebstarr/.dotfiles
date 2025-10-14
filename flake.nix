@@ -26,7 +26,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.kaleb = import ./home.nix;
-	    extraSpecialArgs = { inherit nvim-config; };
+	        extraSpecialArgs = { inherit nvim-config; };
           };
         }
       ];
