@@ -31,7 +31,7 @@
       decoration = {
         rounding = 10;
       };
-      animations.enabled = true;
+      animations.enabled = false;
 
       "$mainMod" = "SUPER";
       bind = [
@@ -41,10 +41,10 @@
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, F, togglefloating,"
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -56,6 +56,16 @@
         "$mainMod SHIFT, 4, movetoworkspace, 4"
         "$mainMod SHIFT, 5, movetoworkspace, 5"
       ];
+    };
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      preload = [ "/home/kaleb/Wallpaper/Sunset.png" ];
+      wallpaper = [ "eDP-1,/home/kaleb/Wallpaper/Sunset.png" ];
     };
   };
 
