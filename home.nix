@@ -21,13 +21,28 @@
     fastfetch
     brave
 
-    gcc
-
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+
+    ripgrep
+    fd
+    lazygit
+
+    gcc
+    gdb
+    cmake
+
+    lua-language-server
+    clang-tools
+    zls
+    rust-analyzer
+    typescript-language-server
+    ruff
+
+    stylua
   ];
 
   programs.git = {
