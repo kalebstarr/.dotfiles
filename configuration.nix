@@ -30,7 +30,6 @@
   users.users.kaleb = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -43,7 +42,6 @@
     git
     kitty
     wofi
-    zsh
     curl
     waybar
     hyprpaper
@@ -53,8 +51,6 @@
     enable = true;
     xwayland.enable = true;
   };
-
-  programs.zsh.enable = true;
 
   services.pipewire = {
     enable = true;

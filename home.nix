@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     neovim
+    zsh
     htop
     fastfetch
   ];
@@ -18,6 +19,8 @@
     userName = "Kaleb";
     userEmail = "kaleb.starr@proton.me";
   };
+
+  programs.zsh.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
