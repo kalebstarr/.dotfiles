@@ -69,6 +69,9 @@
     alsa.enable = true;
     pulse.enable = true;
   };
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  services.tlp.enable = true;
 
   programs.firefox.enable = true;
 
