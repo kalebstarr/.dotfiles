@@ -76,7 +76,6 @@
     curl
     waybar
     hyprpaper
-    pavucontrol
     zsh
 
     brightnessctl
@@ -84,6 +83,10 @@
     tlp
     acpi
     lm_sensors
+
+    pavucontrol
+    pipewire
+    wireplumber
   ];
 
   programs.hyprland = {
@@ -93,10 +96,13 @@
 
   programs.zsh.enable = true;
 
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
   };
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
