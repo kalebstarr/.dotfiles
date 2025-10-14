@@ -27,6 +27,18 @@
   console.keyMap = "de";
   services.xserver.xkb.layout = "de";
 
+  services.xserver.enable = false;
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+	user = "kaleb";
+      };
+    };
+  };
+
   users.users.kaleb = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
