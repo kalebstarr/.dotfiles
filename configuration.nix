@@ -59,6 +59,7 @@
       "wheel"
       "networkmanager"
     ];
+    shell = pkgs.zsh;
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -75,12 +76,15 @@
     waybar
     hyprpaper
     pavucontrol
+    zsh
   ];
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+
+  programs.zsh.enable = true;
 
   services.pipewire = {
     enable = true;

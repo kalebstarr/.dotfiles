@@ -21,6 +21,9 @@
     fastfetch
     brave
 
+    fzf
+    zoxide
+
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
@@ -60,8 +63,6 @@
       gpg.format = "ssh";
     };
   };
-
-  programs.zsh.enable = true;
 
   programs.home-manager.enable = true;
 
