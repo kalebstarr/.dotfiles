@@ -68,6 +68,23 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+
+    matchBlocks = {
+      "*" = {
+        identitiesOnly = true;
+        addKeysToAgent = "yes";
+      };
+    };
+  };
+  services.ssh-agent.enable = true;
+  programs.keychain = {
+    enable = true;
+    keys = [ "id_ed25519" ];
+  };
+
   programs.home-manager.enable = true;
 
 }
