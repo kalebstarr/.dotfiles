@@ -58,6 +58,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "video"
     ];
     shell = pkgs.zsh;
   };
@@ -77,6 +78,12 @@
     hyprpaper
     pavucontrol
     zsh
+
+    brightnessctl
+    playerctl
+    tlp
+    acpi
+    lm_sensors
   ];
 
   programs.hyprland = {
@@ -96,6 +103,21 @@
   services.tlp.enable = true;
 
   programs.firefox.enable = true;
+
+  services.acpid.enable = true;
+  hardware.enableAllFirmware = true;
+
+  boot.kernelModules = [
+    "thinkpad_acpi"
+    "ec_sys"
+  ];
+
+  boot.extraModprobeConfig = ''
+    options thinkpad_acpi fan_control=1 hotkey_report_mode=1
+  '';
+
+  services.upower.enable = true;
+  services.thermald.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
