@@ -4,14 +4,26 @@
 
   programs.waybar = {
     enable = true;
-    
+
     settings = {
       mainBar = {
         layer = "top";
-	position = "top";
-	height = 30;
-	modules-left = [ "hyprland/workspaces" "hyprland/mode" ];
-	modules-right = [ "tray" "battery" "backlight" "network" "pulseaudio" "cpu" "memory" "clock" ];
+        position = "top";
+        height = 30;
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/mode"
+        ];
+        modules-right = [
+          "tray"
+          "battery"
+          "backlight"
+          "network"
+          "pulseaudio"
+          "cpu"
+          "memory"
+          "clock"
+        ];
 
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -26,27 +38,27 @@
           };
         };
 
-	tray = {
-	  icon-size = 18;
-	  spacing = 10;
-	};
+        tray = {
+          icon-size = 18;
+          spacing = 10;
+        };
 
-	clock = {
-	  format = " {:%H:%M}";
-	  format-alt = " {:%d/%m/%Y}";
-	  tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-	};
+        clock = {
+          format = " {:%H:%M}";
+          format-alt = " {:%d/%m/%Y}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
 
-	cpu = {
-	  format = " {usage}%";
-	  tooltip = true;
-	};
+        cpu = {
+          format = " {usage}%";
+          tooltip = true;
+        };
 
-	memory = {
-	  format = " {}%";
-	};
+        memory = {
+          format = " {}%";
+        };
 
-	network = {
+        network = {
           interval = 3;
           format-wifi = "  {essid}";
           format-ethernet = " {ifname}";
@@ -57,7 +69,17 @@
 
         backlight = {
           format = "{icon} {percent}%";
-          format-icons = [ "" "" "" "" "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           on-scroll-up = "brightnessctl set 5%+";
           on-scroll-down = "brightnessctl set 5%-";
         };
@@ -70,10 +92,16 @@
           format = "{icon} {capacity}%";
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
-          format-icons = ["" "" "" "" ""];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           tooltip = true;
         };
-        
+
         "pulseaudio#mic" = {
           format = "{format_source}";
           format-source = " {volume}%";
@@ -81,15 +109,18 @@
           on-click = "pavucontrol";
         };
 
-	pulseaudio = {
+        pulseaudio = {
           format = "{icon} {volume}%";
           format-muted = " Muted";
           format-icons = {
-            default = [ "" "" ];
+            default = [
+              ""
+              ""
+            ];
           };
           on-click = "pavucontrol"; # Opens PulseAudio volume control GUI
         };
-                
+
       };
     };
 

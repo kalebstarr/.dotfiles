@@ -2,15 +2,23 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.gc = {
     automatic = true;
@@ -40,14 +48,17 @@
     settings = {
       default_session = {
         command = "${pkgs.hyprland}/bin/Hyprland";
-	    user = "kaleb";
+        user = "kaleb";
       };
     };
   };
 
   users.users.kaleb = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -124,4 +135,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
