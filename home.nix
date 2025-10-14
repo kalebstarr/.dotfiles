@@ -6,6 +6,7 @@
     ./home/hyprland.nix
     ./home/waybar.nix
     ./home/theming.nix
+    ./home/neovim.nix
   ];
 
   home.username = "kaleb";
@@ -19,6 +20,8 @@
     htop
     fastfetch
     brave
+
+    gcc
 
     noto-fonts
     noto-fonts-cjk-sans
