@@ -21,6 +21,7 @@
     htop
     fastfetch
     brave
+    yazi
 
     fzf
     zoxide
