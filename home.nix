@@ -43,6 +43,7 @@
     ruff
 
     stylua
+    nixfmt
   ];
 
   programs.git = {
