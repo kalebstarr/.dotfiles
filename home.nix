@@ -4,6 +4,7 @@
 
   imports = [
     ./home/hyprland.nix
+    ./home/waybar.nix
   ];
 
   home.username = "kaleb";
@@ -16,6 +17,7 @@
     zsh
     htop
     fastfetch
+    brave
   ];
 
   programs.git = {
@@ -25,10 +27,6 @@
   };
 
   programs.zsh.enable = true;
-
-  programs.waybar = {
-    enable = true;
-  };
 
   programs.home-manager.enable = true;
 
