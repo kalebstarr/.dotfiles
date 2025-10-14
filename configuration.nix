@@ -87,6 +87,7 @@
     pavucontrol
     pipewire
     wireplumber
+    pamixer
   ];
 
   programs.hyprland = {
