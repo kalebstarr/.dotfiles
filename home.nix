@@ -49,6 +49,15 @@
     enable = true;
     userName = "Kaleb";
     userEmail = "kaleb.starr@proton.me";
+
+    signing = {
+        key = "~/.ssh/id_ed25519.pub";
+        signByDefault = true;
+    };
+
+    extraConfig = {
+        gpg.format = "ssh";
+    };
   };
 
   programs.zsh.enable = true;
