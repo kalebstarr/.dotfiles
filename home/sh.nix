@@ -7,6 +7,17 @@
     shellAliases = {
       la = "ls -al";
     };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+
+      plugins = [
+        "git"
+        "z"
+        "fzf"
+      ];
+    };
   };
 
   programs.zoxide = {

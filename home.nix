@@ -24,6 +24,7 @@
 
     fzf
     zoxide
+    oh-my-zsh
 
     noto-fonts
     noto-fonts-cjk-sans
