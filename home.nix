@@ -7,6 +7,7 @@
     ./home/waybar.nix
     ./home/theming.nix
     ./home/neovim.nix
+    ./home/sh.nix
   ];
 
   home.username = "kaleb";
