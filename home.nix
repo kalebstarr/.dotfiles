@@ -25,6 +25,7 @@
     fzf
     zoxide
     oh-my-zsh
+    tmux
 
     noto-fonts
     noto-fonts-cjk-sans
