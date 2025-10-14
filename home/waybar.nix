@@ -11,7 +11,7 @@
 	position = "top";
 	height = 30;
 	modules-left = [ "hyprland/workspaces" "hyprland/mode" ];
-	modules-right = [ "tray" "network" "pulseaudio" "cpu" "memory" "clock" ];
+	modules-right = [ "tray" "battery" "backlight" "network" "pulseaudio" "cpu" "memory" "clock" ];
 
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -47,11 +47,38 @@
 	};
 
 	network = {
+          interval = 3;
           format-wifi = "  {essid}";
           format-ethernet = " {ifname}";
           format-disconnected = "⚠ Disconnected";
           tooltip-format = "{ifname} via {gwaddr} ";
           on-click = "nm-connection-editor"; # Opens network manager GUI
+        };
+
+        backlight = {
+          format = "{icon} {percent}%";
+          format-icons = [ "" "" "" "" "" "" "" "" "" ];
+          on-scroll-up = "brightnessctl set 5%+";
+          on-scroll-down = "brightnessctl set 5%-";
+        };
+
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
+          format-icons = ["" "" "" "" ""];
+          tooltip = true;
+        };
+        
+        "pulseaudio#mic" = {
+          format = "{format_source}";
+          format-source = " {volume}%";
+          format-source-muted = " Muted";
+          on-click = "pavucontrol";
         };
 
 	pulseaudio = {
@@ -62,6 +89,7 @@
           };
           on-click = "pavucontrol"; # Opens PulseAudio volume control GUI
         };
+                
       };
     };
 
