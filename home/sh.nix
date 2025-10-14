@@ -2,14 +2,25 @@
 
 {
 
-    programs.zoxide = {
-        enable = true;
-        enableZshIntegration = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      la = "ls -al";
     };
+  };
 
-    programs.fzf = {
-        enable = true;
-        enableZshIntegration = true;
-    };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd"
+      "cd"
+    ];
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
 }
