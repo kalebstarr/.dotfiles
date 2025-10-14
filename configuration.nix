@@ -43,12 +43,12 @@
 
   services.xserver.enable = false;
 
+  services.getty.autologinUser = null;
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "kaleb";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
       };
     };
   };
