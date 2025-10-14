@@ -5,6 +5,7 @@
   imports = [
     ./home/hyprland.nix
     ./home/waybar.nix
+    ./home/theming.nix
   ];
 
   home.username = "kaleb";
