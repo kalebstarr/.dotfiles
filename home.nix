@@ -45,7 +45,6 @@
     gcc
     gdb
     cmake
-    clang
     rustc
     cargo
     clippy
@@ -91,7 +90,7 @@
   };
   services.ssh-agent.enable = true;
   programs.keychain = {
-    enable = false;
+    enable = true;
     keys = [
       # "id_ed25519"
     ];
