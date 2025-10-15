@@ -6,7 +6,7 @@
     enable = true;
     shellAliases = {
       la = "ls -al";
-      rebuild = "nixos-rebuild switch --flake ~/.dotfiles";
+      rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     };
 
     oh-my-zsh = {
