@@ -23,6 +23,9 @@
     brave
     yazi
 
+    waybar
+    hyprpaper
+
     fzf
     zoxide
     oh-my-zsh

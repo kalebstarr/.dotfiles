@@ -75,8 +75,6 @@
     kitty
     wofi
     curl
-    waybar
-    hyprpaper
     zsh
 
     tuigreet
