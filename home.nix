@@ -67,13 +67,9 @@
     userName = "Kaleb";
     userEmail = "kaleb.starr@proton.me";
 
-    signing = {
-      key = "~/.ssh/id_ed25519.pub";
-      signByDefault = true;
-    };
-
     extraConfig = {
-      gpg.format = "ssh";
+      core.editor = "vim";
+      init.defaultBranch = "main";
     };
   };
 
@@ -83,19 +79,19 @@
 
     matchBlocks = {
       "*" = {
-        identitiesOnly = true;
+        addKeysToAgent = "yes";
         identityFile = "~/.ssh/id_ed25519";
-        addKeysToAgent = "confirm";
+        serverAliveInterval = 60;
+        serverAliveCountMax = 3;
+      };
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519";
       };
     };
   };
   services.ssh-agent.enable = true;
-  programs.keychain = {
-    enable = true;
-    keys = [
-      # "id_ed25519"
-    ];
-  };
 
   programs.home-manager.enable = true;
 
