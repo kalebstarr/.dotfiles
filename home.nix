@@ -21,6 +21,7 @@
     htop
     fastfetch
     brave
+    obsidian
     yazi
 
     waybar
@@ -44,6 +45,11 @@
     gcc
     gdb
     cmake
+    clang
+    rustc
+    cargo
+    clippy
+    rustfmt
 
     lua-language-server
     clang-tools
