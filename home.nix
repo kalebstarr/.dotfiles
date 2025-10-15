@@ -49,6 +49,7 @@
     cargo
     clippy
     rustfmt
+    uv
 
     lua-language-server
     clang-tools
