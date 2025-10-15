@@ -42,8 +42,9 @@
       };
 
       "$mainMod" = "SUPER";
+      "$terminal" = "foot";
       bind = [
-        "$mainMod, Return, exec, kitty"
+        "$mainMod, Return, exec, $terminal"
         "$mainMod, D, exec, wofi --show drun"
         "$mainMod, E, exec, thunar"
         "$mainMod, Q, killactive,"
