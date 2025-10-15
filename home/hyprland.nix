@@ -31,7 +31,15 @@
       decoration = {
         rounding = 10;
       };
-      animations.enabled = false;
+      animations = {
+        enabled = true;
+        bezier = [ "myBezier,0.05,0.9,0.1,1.05" ];
+        animation = [
+          "windows,1,7,myBezier"
+          "fade,1,5,default"
+          "workspaces,1,6,myBezier"
+        ];
+      };
 
       "$mainMod" = "SUPER";
       bind = [
