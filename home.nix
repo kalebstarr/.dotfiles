@@ -78,14 +78,17 @@
     matchBlocks = {
       "*" = {
         identitiesOnly = true;
-        addKeysToAgent = "yes";
+        identityFile = "~/.ssh/id_ed25519";
+        addKeysToAgent = "confirm";
       };
     };
   };
   services.ssh-agent.enable = true;
   programs.keychain = {
-    enable = true;
-    keys = [ "id_ed25519" ];
+    enable = false;
+    keys = [
+      # "id_ed25519"
+    ];
   };
 
   programs.home-manager.enable = true;
