@@ -9,7 +9,7 @@
 
       exec-once = [
         "waybar"
-        "hyprpaper"
+        # "hyprpaper"
       ];
 
       input = {
