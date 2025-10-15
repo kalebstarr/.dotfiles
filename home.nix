@@ -8,6 +8,7 @@
     ./home/theming.nix
     ./home/neovim.nix
     ./home/sh.nix
+    ./home/foot.nix
   ];
 
   home.username = "kaleb";
