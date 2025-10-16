@@ -82,8 +82,8 @@
     settings = {
       ipc = "on";
       splash = false;
-      preload = [ "/home/kaleb/Wallpaper/Sunset.png" ];
-      wallpaper = [ "eDP-1,/home/kaleb/Wallpaper/Sunset.png" ];
+      preload = [ "./.dotfiles/wallpapers/Sunset.png" ];
+      wallpaper = [ "eDP-1,./.dotfiles/wallpapers/Sunset.png" ];
     };
   };
 
