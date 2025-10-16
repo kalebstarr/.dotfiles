@@ -32,16 +32,15 @@
     zoxide
     oh-my-zsh
     tmux
+    ripgrep
+    fd
+    lazygit
 
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
-
-    ripgrep
-    fd
-    lazygit
 
     gcc
     gdb
