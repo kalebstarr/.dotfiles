@@ -108,7 +108,7 @@
     wireplumber.enable = true;
   };
   services.blueman.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
   services.tlp.enable = true;
 
   programs.firefox.enable = true;
