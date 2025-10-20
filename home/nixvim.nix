@@ -6,7 +6,6 @@
     enable = true;
 
     colorschemes.gruvbox.enable = true;
-    globals.mapleader = " ";
 
     plugins = {
       lsp = {
@@ -19,10 +18,6 @@
       telescope.enable = true;
       web-devicons.enable = true;
     };
-
-    extraConfigLua = ''
-      vim.opt.relativenumber = true
-    '';
   };
 
 }
