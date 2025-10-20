@@ -19,6 +19,7 @@
     ./nixvim/keymaps.nix
     ./nixvim/options.nix
     ./nixvim/plugins/treesitter.nix
+    ./nixvim/plugins/lsp-config.nix
   ];
 
   home.username = "kaleb";
