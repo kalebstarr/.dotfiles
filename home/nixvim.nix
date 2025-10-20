@@ -27,7 +27,6 @@
       telescope.enable = true;
       treesitter = {
         enable = true;
-        folding = true;
         settings = {
           indent.enable = true;
           highlight.enable = true;
