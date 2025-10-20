@@ -14,24 +14,6 @@
         servers = {
           nixd.enable = true;
         };
-
-        diagnostics = {
-          virtualText = {
-            prefix = "●";
-            spacing = 2;
-          };
-          signs = true;
-          underline = true;
-          updateInInsert = false;
-          severitySort = true;
-          float = {
-            border = "rounded";
-            source = "if_many";
-            header = "";
-            prefix = "";
-          };
-        };
-
       };
 
       telescope.enable = true;
