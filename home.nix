@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
 
@@ -6,9 +11,11 @@
     ./home/hyprland.nix
     ./home/waybar.nix
     ./home/theming.nix
-    ./home/neovim.nix
     ./home/sh.nix
     ./home/terminal.nix
+
+    inputs.nixvim.homeModules.nixvim
+    ./home/nixvim.nix
   ];
 
   home.username = "kaleb";
@@ -17,6 +24,7 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
+    neovim
     zsh
     htop
     fastfetch
@@ -49,13 +57,6 @@
     clippy
     rustfmt
     uv
-
-    lua-language-server
-    clang-tools
-    zls
-    rust-analyzer
-    typescript-language-server
-    ruff
 
     stylua
     nixfmt
