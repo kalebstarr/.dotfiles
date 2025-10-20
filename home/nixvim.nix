@@ -8,14 +8,6 @@
     colorschemes.gruvbox.enable = true;
     globals.mapleader = " ";
 
-    keymaps = [
-      {
-        key = "<leader>x";
-        action = "<cmd>Ex<CR>";
-        options.desc = "Open netrw";
-      }
-    ];
-
     plugins = {
       lsp = {
         enable = true;

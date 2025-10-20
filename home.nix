@@ -16,6 +16,7 @@
 
     inputs.nixvim.homeModules.nixvim
     ./home/nixvim.nix
+    ./nixvim/keymaps.nix
   ];
 
   home.username = "kaleb";
