@@ -35,6 +35,7 @@
               useUserPackages = true;
               users.kaleb = import ./home.nix;
               extraSpecialArgs = { inherit nvim-config; };
+	      backupFileExtension = "backup";
             };
           }
         ];
