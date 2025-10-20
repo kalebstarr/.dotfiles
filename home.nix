@@ -63,10 +63,11 @@
 
   programs.git = {
     enable = true;
-    userName = "Kaleb";
-    userEmail = "kaleb.starr@proton.me";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Kaleb";
+        email = "kaleb.starr@proton.me";
+      };
       core.editor = "vim";
       init.defaultBranch = "main";
     };
