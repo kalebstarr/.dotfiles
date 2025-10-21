@@ -26,6 +26,7 @@
     ./nixvim/plugins/lazygit.nix
     ./nixvim/plugins/lualine.nix
     ./nixvim/plugins/formatters.nix
+    ./nixvim/plugins/todo-comments.nix
   ];
 
   home.username = "kaleb";
