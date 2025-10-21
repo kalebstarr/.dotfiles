@@ -9,7 +9,7 @@
             lua = [ "stylua" ];
             python = [ "ruff" ];
             rust = [ "rustfmt" ];
-            cpp = [ "clang_format" ];
+            cpp = [ "clang-format" ];
             nix = [ "nixfmt" ];
           };
         };

@@ -65,11 +65,13 @@
     rustc
     cargo
     clippy
-    rustfmt
     uv
 
     stylua
     nixfmt
+    ruff
+    rustfmt
+    clang-tools
   ];
 
   programs.git = {
