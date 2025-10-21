@@ -23,6 +23,7 @@
     ./nixvim/plugins/telescope.nix
     ./nixvim/plugins/comment.nix
     ./nixvim/plugins/completions.nix
+    ./nixvim/plugins/lazygit.nix
   ];
 
   home.username = "kaleb";
