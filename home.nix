@@ -22,6 +22,7 @@
     ./nixvim/plugins/lsp-config.nix
     ./nixvim/plugins/telescope.nix
     ./nixvim/plugins/comment.nix
+    ./nixvim/plugins/completions.nix
   ];
 
   home.username = "kaleb";
