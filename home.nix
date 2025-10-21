@@ -21,6 +21,7 @@
     ./nixvim/plugins/treesitter.nix
     ./nixvim/plugins/lsp-config.nix
     ./nixvim/plugins/telescope.nix
+    ./nixvim/plugins/comment.nix
   ];
 
   home.username = "kaleb";
