@@ -8,7 +8,6 @@
     colorschemes.gruvbox.enable = true;
 
     plugins = {
-
       web-devicons.enable = true;
     };
   };

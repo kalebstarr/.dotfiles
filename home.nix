@@ -15,7 +15,7 @@
     ./home/terminal.nix
 
     inputs.nixvim.homeModules.nixvim
-    ./home/nixvim.nix
+    ./nixvim.nix
     ./nixvim/keymaps.nix
     ./nixvim/options.nix
     ./nixvim/plugins/treesitter.nix
