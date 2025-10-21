@@ -8,6 +8,7 @@
         clangd.enable = true;
         zls.enable = true;
         ruff.enable = true;
+        pyright.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = false;
