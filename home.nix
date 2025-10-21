@@ -59,14 +59,12 @@
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
 
-    python3
     gcc
     gdb
     cmake
     rustc
     cargo
     clippy
-    uv
 
     stylua
     nixfmt
