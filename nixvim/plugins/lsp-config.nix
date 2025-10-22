@@ -21,6 +21,10 @@
           K = "hover";
           "<leader>ca" = "code_action";
         };
+
+        diagnostic = {
+          "<leader>e" = "open_float";
+        };
       };
     };
   };
