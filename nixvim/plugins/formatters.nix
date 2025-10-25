@@ -11,6 +11,9 @@
             rust = [ "rustfmt" ];
             cpp = [ "clang-format" ];
             nix = [ "nixfmt" ];
+            html = [ "prettier" ];
+            css = [ "prettier" ];
+            javascript = [ "prettier" ];
           };
         };
       };

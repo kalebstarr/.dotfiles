@@ -71,6 +71,7 @@
     ruff
     rustfmt
     clang-tools
+    prettier
   ];
 
   programs.git = {
