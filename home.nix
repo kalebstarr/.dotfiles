@@ -13,6 +13,7 @@
     ./home/theming.nix
     ./home/sh.nix
     ./home/terminal.nix
+    ./home/tmux.nix
 
     inputs.nixvim.homeModules.nixvim
     ./nixvim.nix
