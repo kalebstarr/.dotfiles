@@ -20,12 +20,10 @@
         ];
         modules-right = [
           "tray"
-          "battery"
           "backlight"
           "network"
           "pulseaudio"
-          "cpu"
-          "memory"
+          "battery"
         ];
 
         "hyprland/workspaces" = {
@@ -53,15 +51,6 @@
         tray = {
           icon-size = 18;
           spacing = 10;
-        };
-
-        cpu = {
-          format = " {usage}%";
-          tooltip = true;
-        };
-
-        memory = {
-          format = " {}%";
         };
 
         network = {
