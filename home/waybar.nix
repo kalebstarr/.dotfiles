@@ -162,7 +162,7 @@
           margin: 4px 0;
       }
 
-      #clock, #cpu, #memory, #network, #pulseaudio, #tray {
+      #clock, #cpu, #memory, #network, #pulseaudio, #tray, #battery {
           padding: 0 10px;
           margin: 4px 0;
       }
