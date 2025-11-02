@@ -14,6 +14,10 @@
           "hyprland/workspaces"
           "hyprland/mode"
         ];
+        modules-center = [
+          "clock"
+          "clock#calendar"
+        ];
         modules-right = [
           "tray"
           "battery"
@@ -22,7 +26,6 @@
           "pulseaudio"
           "cpu"
           "memory"
-          "clock"
         ];
 
         "hyprland/workspaces" = {
@@ -38,15 +41,18 @@
           };
         };
 
+        clock = {
+          format = "{:%H:%M}";
+          tooltip = false;
+        };
+        "clock#calendar" = {
+          format = "{:%d/%m}";
+          tooltip = false;
+        };
+
         tray = {
           icon-size = 18;
           spacing = 10;
-        };
-
-        clock = {
-          format = " {:%H:%M}";
-          format-alt = " {:%d/%m/%Y}";
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
         cpu = {
