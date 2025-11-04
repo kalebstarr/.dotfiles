@@ -29,11 +29,11 @@
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "🎵";
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
             "urgent" = "";
             "default" = "";
           };
@@ -135,10 +135,13 @@
 
       #workspaces button {
           padding: 0 10px;
+          margin: 2px;
           color: #a6adc8; /* Subdued text */
+          border: 1px solid #a6adc8;
       }
       #workspaces button.active {
           color: #89b4fa; /* Blue */
+          border: 1px solid #89b4fa;
       }
       #workspaces button.urgent {
           background-color: #f38ba8; /* Red */
