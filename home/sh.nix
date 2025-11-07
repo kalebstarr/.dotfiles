@@ -45,9 +45,9 @@
       done
 
       tmux new-session -d -s "$session_name" -n nvim
+      tmux send-keys -t "$session_name:nvim" "nvim ." Enter
       tmux new-window -t "$session_name"
-
-      tmux attach -t "$session_name"
+      tmux attach-session -t "$session_name:nvim"
     '')
   ];
 
