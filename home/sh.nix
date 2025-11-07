@@ -29,7 +29,7 @@
     (pkgs.writeShellScriptBin "ts" ''
       #!/bin/bash
 
-      session_name="$(basename "$PWD")"
+      session_name="$(basename "$PWD" | sed 's/^\.*//')"
 
       while [[ $# -gt 0 ]]; do
         case $1 in
