@@ -24,6 +24,32 @@
   programs.tmux = {
     enable = true;
   };
+  home.packages = with pkgs; [
+    tmux
+    (pkgs.writeShellScriptBin "ts" ''
+      #!/bin/bash
+
+      session_name="$(basename "$PWD")"
+
+      while [[ $# -gt 0 ]]; do
+        case $1 in
+          -n|--name)
+            session_name="$2"
+            shift 2
+            ;;
+          *)
+            echo "Usage: ts [-n|--name SESSION_NAME]"
+            exit 1
+            ;;
+        esac
+      done
+
+      tmux new-session -d -s "$session_name" -n nvim
+      tmux new-window -t "$session_name"
+
+      tmux attach -t "$session_name"
+    '')
+  ];
 
   programs.zoxide = {
     enable = true;
