@@ -14,6 +14,7 @@
             html = [ "prettier" ];
             css = [ "prettier" ];
             javascript = [ "prettier" ];
+            zig = [ "zigfmt" ];
           };
         };
       };
