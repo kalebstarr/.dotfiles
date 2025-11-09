@@ -42,6 +42,7 @@
     brave
     obsidian
     yazi
+    discord
 
     waybar
     hyprpaper
