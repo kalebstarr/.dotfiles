@@ -43,6 +43,7 @@
     obsidian
     yazi
     discord
+    ghostty
 
     waybar
     hyprpaper
