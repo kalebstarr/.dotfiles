@@ -13,11 +13,27 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "kaleb";
 
-  networking.hostName = "nixos-wsl";
+  networking.hostName = "wsl";
 
   services.openssh.enable = false;
+
+  users.users.kaleb = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+    ];
+    shell = pkgs.zsh;
+  };
+
+  security.sudo.wheelNeedsPassword = false;
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs.zsh.enable = true;
 
   systemd.services."user-runtime-dir@".serviceConfig.ExecStart = [
     ""
