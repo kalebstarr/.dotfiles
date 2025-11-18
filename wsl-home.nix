@@ -9,7 +9,6 @@
 
   imports = [
     ./home/sh.nix
-    ./home/terminal.nix
     ./home/tmux.nix
 
     inputs.nixvim.homeModules.nixvim
