@@ -28,6 +28,8 @@
 
   networking.hostName = "wsl";
 
+  time.timeZone = "Europe/Berlin";
+
   services.openssh.enable = false;
 
   users.users.kaleb = {
