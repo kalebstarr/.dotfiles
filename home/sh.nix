@@ -31,6 +31,9 @@
       core.editor = "vim";
       init.defaultBranch = "main";
     };
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
 
   programs.ssh = {
