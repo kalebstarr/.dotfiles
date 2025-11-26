@@ -128,25 +128,6 @@
   services.upower.enable = true;
   services.thermald.enable = true;
 
-  # Temporary steam config
-  programs.steam = {
-    enable = true;
-    localNetworkGameTransfers.openFirewall = true;
-
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-      protontricks
-    ];
-  };
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  services.xserver.videoDrivers = [ "modesetting" ];
-  programs.gamemode.enable = true;
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
