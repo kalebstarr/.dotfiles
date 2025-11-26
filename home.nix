@@ -44,6 +44,7 @@
     yazi
     discord
     ghostty
+    protonvpn-gui
 
     waybar
     hyprpaper
