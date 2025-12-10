@@ -28,7 +28,7 @@
           "n"
           "v"
         ];
-        action = ''
+        action.__raw = ''
           function()
             require("conform").format({
               async = true,  -- Non-blocking
