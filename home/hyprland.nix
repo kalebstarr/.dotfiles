@@ -42,7 +42,7 @@
       };
 
       "$mainMod" = "SUPER";
-      "$terminal" = "ghostty";
+      "$terminal" = "foot";
       bind = [
         "$mainMod, Return, exec, $terminal"
         "$mainMod, D, exec, wofi --show drun"
