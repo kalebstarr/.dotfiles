@@ -45,6 +45,7 @@
     discord
     ghostty
     protonvpn-gui
+    openvpn
 
     waybar
     hyprpaper
