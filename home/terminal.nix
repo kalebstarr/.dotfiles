@@ -8,8 +8,6 @@
       settings = {
         main = {
           term = "xterm-256color";
-          font = "FiraCode Nerd Font";
-          dpi-aware = "yes";
           pad = "10x10";
         };
         cursor = {
@@ -35,7 +33,6 @@
       enableZshIntegration = true;
       settings = {
         theme = "catppuccin-mocha";
-        font-family = "FiraCode Nerd Font";
         font-size = 12;
         window-padding-x = 10;
         window-padding-y = 10;
