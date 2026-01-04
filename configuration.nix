@@ -49,7 +49,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
         user = "kaleb";
       };
     };
@@ -80,6 +80,9 @@
     zsh
 
     tuigreet
+    hyprland-qtutils
+    hyprpaper
+    uwsm
 
     brightnessctl
     playerctl
@@ -96,6 +99,16 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    withUWSM = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = [
+      "hyprland"
+      "gtk"
+    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 
   programs.zsh.enable = true;

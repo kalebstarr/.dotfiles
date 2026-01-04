@@ -4,6 +4,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
+
     settings = {
       monitor = "eDP-1,1920x1080@60,auto,1";
 
