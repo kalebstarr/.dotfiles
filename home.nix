@@ -46,6 +46,7 @@
     ghostty
     protonvpn-gui
     openvpn
+    godot
 
     waybar
     hyprpaper
