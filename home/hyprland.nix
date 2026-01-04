@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, stylix, ... }:
 
 {
 
@@ -11,7 +11,6 @@
 
       exec-once = [
         "waybar"
-        # "hyprpaper"
       ];
 
       input = {
@@ -25,8 +24,6 @@
         gaps_in = 2;
         gaps_out = 5;
         border_size = 2;
-        "col.active_border" = "rgba(cdd6f4aa) rgba(b4befeaa) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
         layout = "dwindle";
       };
 
@@ -83,13 +80,16 @@
     };
   };
 
-  services.hyprpaper = {
+  stylix = {
     enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      preload = [ "./.dotfiles/wallpapers/Sunset.png" ];
-      wallpaper = [ "eDP-1,./.dotfiles/wallpapers/Sunset.png" ];
+    image = ../wallpapers/Sunset.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    polarity = "dark";
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
     };
   };
 

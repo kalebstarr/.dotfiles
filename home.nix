@@ -10,10 +10,10 @@
   imports = [
     ./home/hyprland.nix
     ./home/waybar.nix
-    ./home/theming.nix
     ./home/sh.nix
     ./home/terminal.nix
     ./home/tmux.nix
+    inputs.stylix.homeModules.stylix
 
     inputs.nixvim.homeModules.nixvim
     ./nixvim.nix
@@ -49,7 +49,6 @@
     godot
 
     waybar
-    hyprpaper
 
     fzf
     zoxide
@@ -64,6 +63,8 @@
     noto-fonts-color-emoji
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+
+    base16-schemes
 
     gcc
     gdb

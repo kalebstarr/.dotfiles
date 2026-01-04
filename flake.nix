@@ -16,6 +16,11 @@
     };
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +29,7 @@
       home-manager,
       nixvim,
       nixos-wsl,
+      stylix,
       ...
     }@inputs:
     {
@@ -42,6 +48,7 @@
               backupFileExtension = "backup";
             };
           }
+          stylix.nixosModules.stylix
         ];
       };
 

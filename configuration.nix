@@ -81,7 +81,6 @@
 
     tuigreet
     hyprland-qtutils
-    hyprpaper
     uwsm
 
     brightnessctl
