@@ -11,6 +11,7 @@
 
       exec-once = [
         "waybar"
+        "swaybg -i ${../wallpapers/Sunset.png} -m fill"
       ];
 
       input = {

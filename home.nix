@@ -50,6 +50,7 @@
     godot
 
     waybar
+    swaybg
 
     fzf
     zoxide
