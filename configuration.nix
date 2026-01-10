@@ -33,8 +33,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  # time.timeZone = "Europe/Berlin";
-  time.timeZone = "Pacific/Auckland";
+  time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
