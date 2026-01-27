@@ -59,6 +59,7 @@
     ripgrep
     fd
     lazygit
+    devenv
 
     noto-fonts
     noto-fonts-cjk-sans

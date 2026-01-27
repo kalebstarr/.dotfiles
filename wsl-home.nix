@@ -45,6 +45,7 @@
     ripgrep
     fd
     lazygit
+    devenv
 
     gcc
     gdb
