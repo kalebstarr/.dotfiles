@@ -48,9 +48,10 @@
 
   programs.zsh.enable = true;
 
-  systemd.services."user-runtime-dir@".serviceConfig.ExecStart = [
-    ""
-  ];
+  system.activationScripts.binSystemctl = {
+    text = "ln -sfn /run/current-system/sw/bin/systemctl /usr/bin/systemctl";
+    deps = [ ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
