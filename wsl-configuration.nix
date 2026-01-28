@@ -23,6 +23,12 @@
     "flakes"
   ];
 
+  nix.settings.trusted-users = [
+    "root"
+    "kaleb"
+    "@wheel"
+  ];
+
   wsl.enable = true;
   wsl.defaultUser = "kaleb";
 

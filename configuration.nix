@@ -26,6 +26,12 @@
     options = "--delete-older-than 30d";
   };
 
+  nix.settings.trusted-users = [
+    "root"
+    "kaleb"
+    "@wheel"
+  ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
