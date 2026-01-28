@@ -15,6 +15,7 @@
           installRustc = false;
         };
         ts_ls.enable = true;
+        elixirls.enable = true;
       };
       keymaps = {
         lspBuf = {
