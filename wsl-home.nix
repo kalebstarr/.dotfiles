@@ -10,6 +10,7 @@
   imports = [
     ./home/sh.nix
     ./home/tmux.nix
+    ./home/claude-code.nix
 
     inputs.nixvim.homeModules.nixvim
     ./nixvim.nix
