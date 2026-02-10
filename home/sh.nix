@@ -59,26 +59,44 @@
   home.packages = with pkgs; [
     tmux
     (pkgs.writeShellScriptBin "ts" ''
-      #!/bin/bash
+      set -euo pipefail
 
-      session_name="$(basename "$PWD" | sed 's/^\.*//')"
+      session_name=$(basename "$PWD" | sed 's/^\.*//')
+      extra_windows=1
 
       while [[ $# -gt 0 ]]; do
         case $1 in
           -n|--name)
+            if [[ -z "''${2:-}" ]]; then echo "Error: Name required"; exit 1; fi
             session_name="$2"
             shift 2
             ;;
+          -w|--windows)
+            if [[ -z "''${2:-}" ]]; then echo "Error: Window count required"; exit 1; fi
+            extra_windows="$2"
+            shift 2
+            ;;
           *)
-            echo "Usage: ts [-n|--name SESSION_NAME]"
+            echo "Usage: ts [-n|--name NAME] [-w|--windows COUNT]"
             exit 1
             ;;
         esac
       done
 
-      tmux new-session -d -s "$session_name" -n nvim
-      tmux send-keys -t "$session_name:nvim" "nvim ." Enter
-      tmux new-window -t "$session_name"
+      if ! [[ "$extra_windows" =~ ^[0-9]+$ ]] || [ "$extra_windows" -lt 1 ]; then
+        echo "Error: Window count must be an integer >= 1"
+        exit 1
+      fi
+
+      if ! tmux has-session -t "$session_name" 2>/dev/null; then
+        tmux new-session -d -s "$session_name" -n nvim
+        tmux send-keys -t "$session_name:nvim" "nvim ." Enter
+
+        for ((i=1; i<=extra_windows; i++)); do
+          tmux new-window -t "$session_name"
+        done
+      fi
+
       tmux attach-session -t "$session_name:nvim"
     '')
   ];
