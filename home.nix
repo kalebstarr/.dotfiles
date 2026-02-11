@@ -44,7 +44,7 @@
     brave
     obsidian
     yazi
-    discord
+    legcord
     ghostty
     protonvpn-gui
     openvpn
