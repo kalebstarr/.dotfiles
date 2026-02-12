@@ -146,6 +146,13 @@
   services.upower.enable = true;
   services.thermald.enable = true;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+    ];
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
