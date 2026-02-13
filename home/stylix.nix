@@ -41,6 +41,8 @@
         popups = 10;
       };
     };
+
+    opacity.terminal = 0.9;
   };
 
 }
