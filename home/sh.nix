@@ -2,6 +2,8 @@
 
 {
 
+  programs.starship.enable = true;
+
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -11,7 +13,6 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "robbyrussell";
 
       plugins = [
         "git"
@@ -19,6 +20,10 @@
         "fzf"
       ];
     };
+
+    initContent = ''
+      eval "$(starship init zsh)"
+    '';
   };
 
   programs.git = {
