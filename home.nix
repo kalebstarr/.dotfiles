@@ -87,6 +87,12 @@
 
   services.ssh-agent.enable = true;
 
+  stylix.targets = {
+    gtk.enable = true;
+    gnome.enable = true;
+    hyprland.enable = true;
+  };
+
   programs.home-manager.enable = true;
 
 }

@@ -8,12 +8,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
     polarity = "dark";
 
-    targets = {
-      gtk.enable = true;
-      gnome.enable = true;
-      hyprland.enable = true;
-    };
-
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";

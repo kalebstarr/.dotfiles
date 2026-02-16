@@ -67,6 +67,7 @@
               backupFileExtension = "backup";
             };
           }
+          stylix.nixosModules.stylix
         ];
       };
     };
