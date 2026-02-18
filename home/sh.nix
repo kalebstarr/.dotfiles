@@ -58,6 +58,8 @@
     };
   };
 
+  services.ssh-agent.enable = true;
+
   programs.tmux = {
     enable = true;
   };

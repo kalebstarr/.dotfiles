@@ -65,8 +65,6 @@
     prettier
   ];
 
-  services.ssh-agent.enable = false;
-
   programs.home-manager.enable = true;
 
 }
