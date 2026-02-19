@@ -16,6 +16,7 @@
         };
         ts_ls.enable = true;
         elixirls.enable = true;
+        gopls.enable = true;
       };
       keymaps = {
         lspBuf = {

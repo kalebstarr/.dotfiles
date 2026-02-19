@@ -15,6 +15,7 @@
             css = [ "prettier" ];
             javascript = [ "prettier" ];
             zig = [ "zigfmt" ];
+            go = [ "gofmt" ];
           };
         };
       };
