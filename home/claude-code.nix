@@ -13,7 +13,7 @@
     settings = {
       theme = "dark";
       includeCoAuthoredBy = false;
-      model = "claude-sonnet-4-5-20250929";
+      model = "claude-opus-4-6";
 
       permissions = {
         defaultMode = "acceptEdits";
