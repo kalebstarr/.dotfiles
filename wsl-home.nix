@@ -12,7 +12,6 @@
     ./home/tmux.nix
     ./home/stylix.nix
     inputs.stylix.homeModules.stylix
-    ./home/claude-code.nix
 
     inputs.nixvim.homeModules.nixvim
     ./nixvim.nix
