@@ -41,6 +41,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/thinkpad
+          ./modules/common.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
           home-manager.nixosModules.home-manager
           {
@@ -61,6 +62,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/wsl
+          ./modules/common.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {

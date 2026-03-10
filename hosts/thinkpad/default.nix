@@ -15,22 +15,11 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
-  nix.settings.trusted-users = [
-    "root"
-    "kaleb"
-    "@wheel"
-  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -38,11 +27,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
-  time.timeZone = "Europe/Berlin";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
 
   console.keyMap = "de";
   services.xserver.xkb.layout = "de";
@@ -59,20 +43,6 @@
       };
     };
   };
-
-  users.users.kaleb = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-    ];
-    shell = pkgs.zsh;
-  };
-
-  security.sudo.wheelNeedsPassword = false;
-
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -115,8 +85,6 @@
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 
-  programs.zsh.enable = true;
-
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
@@ -136,13 +104,6 @@
 
   services.upower.enable = true;
   services.thermald.enable = true;
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      stdenv.cc.cc
-    ];
-  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

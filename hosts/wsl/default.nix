@@ -18,52 +18,16 @@
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  nix.settings.trusted-users = [
-    "root"
-    "kaleb"
-    "@wheel"
-  ];
-
   wsl.enable = true;
   wsl.defaultUser = "kaleb";
 
   networking.hostName = "wsl";
 
-  time.timeZone = "Europe/Berlin";
-
   services.openssh.enable = false;
-
-  users.users.kaleb = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-    ];
-    shell = pkgs.zsh;
-  };
-
-  security.sudo.wheelNeedsPassword = false;
-
-  nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
 
   system.activationScripts.binSystemctl = {
     text = "ln -sfn /run/current-system/sw/bin/systemctl /usr/bin/systemctl";
     deps = [ ];
-  };
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      stdenv.cc.cc
-    ];
   };
 
   programs.dconf.enable = true;
