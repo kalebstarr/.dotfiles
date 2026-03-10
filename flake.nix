@@ -1,6 +1,6 @@
 {
 
-  description = "NixOS ThinkPad";
+  description = "NixOS Config";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -40,7 +40,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/thinkpad
           nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
           home-manager.nixosModules.home-manager
           {
@@ -60,7 +60,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./wsl-configuration.nix
+          ./hosts/wsl
           home-manager.nixosModules.home-manager
           {
             home-manager = {
