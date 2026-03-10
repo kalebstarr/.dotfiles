@@ -134,15 +134,6 @@
   services.acpid.enable = true;
   hardware.enableAllFirmware = true;
 
-  boot.kernelModules = [
-    "thinkpad_acpi"
-    "ec_sys"
-  ];
-
-  boot.extraModprobeConfig = ''
-    options thinkpad_acpi fan_control=1 hotkey_report_mode=1
-  '';
-
   services.upower.enable = true;
   services.thermald.enable = true;
 

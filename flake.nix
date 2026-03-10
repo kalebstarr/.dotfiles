@@ -21,6 +21,8 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -30,6 +32,7 @@
       nixvim,
       nixos-wsl,
       stylix,
+      nixos-hardware,
       ...
     }@inputs:
     {
@@ -38,6 +41,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
           home-manager.nixosModules.home-manager
           {
             home-manager = {
