@@ -24,7 +24,6 @@
     keymaps = [
       {
         key = "<leader>gf";
-        lua = true;
         mode = [
           "n"
           "v"
