@@ -48,7 +48,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.kaleb = import ./home.nix;
+              users.kaleb = import ./home/thinkpad.nix;
               extraSpecialArgs = { inherit inputs; };
               backupFileExtension = "backup";
             };
@@ -68,7 +68,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.kaleb = import ./wsl-home.nix;
+              users.kaleb = import ./home/wsl.nix;
               extraSpecialArgs = { inherit inputs; };
               backupFileExtension = "backup";
             };

@@ -2,6 +2,11 @@
 
 {
 
+  home.packages = with pkgs; [
+    waybar
+    swaybg
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -11,7 +16,7 @@
 
       exec-once = [
         "waybar"
-        "swaybg -i ${../wallpapers/Sunset.png} -m fill"
+        "swaybg -i ${../../wallpapers/Sunset.png} -m fill"
       ];
 
       input = {
