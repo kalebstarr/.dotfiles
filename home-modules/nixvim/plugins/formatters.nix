@@ -1,4 +1,14 @@
+{ pkgs, ... }:
+
 {
+
+  home.packages = with pkgs; [
+    nixfmt
+    stylua
+    ruff
+    prettierd
+    clang-tools
+  ];
 
   programs.nixvim = {
     plugins = {
