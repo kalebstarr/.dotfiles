@@ -4,6 +4,7 @@
 
   stylix = {
     enable = true;
+    overlays.enable = false;
     image = ../../wallpapers/Sunset.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
     polarity = "dark";
