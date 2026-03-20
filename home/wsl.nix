@@ -24,6 +24,9 @@
     inputs.stylix.homeModules.stylix
 
     ../home-modules/nixvim
+
+    inputs.nix-doom-emacs-unstraightened.hmModule
+    ../home-modules/doom-emacs
   ];
 
   home.username = "kaleb";
