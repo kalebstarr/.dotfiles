@@ -105,6 +105,17 @@
   services.upower.enable = true;
   services.thermald.enable = true;
 
+  # Dev with Arduino and IOT devices
+  services.udev.packages = with pkgs; [
+    platformio-core.udev
+  ];
+
+  users.users.kaleb = {
+    extraGroups = [
+      "dialout"
+    ];
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
