@@ -7,6 +7,7 @@
     shellAliases = {
       la = "ls -al";
       rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+      emacs = "emacs -nw";
     };
 
     oh-my-zsh = {
