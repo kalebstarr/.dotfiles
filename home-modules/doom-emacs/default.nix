@@ -7,4 +7,6 @@
     doomDir = ./doom.d;
   };
 
+  services.emacs.enable = true;
+
 }

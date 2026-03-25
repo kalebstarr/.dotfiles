@@ -8,6 +8,8 @@
       la = "ls -al";
       rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
       emacs = "emacs -nw";
+      ect = "emacsclient -t";
+      ecg = "emacsclient -c";
     };
 
     oh-my-zsh = {
