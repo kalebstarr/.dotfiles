@@ -40,7 +40,7 @@
     brave
     obsidian
     legcord
-    protonvpn-gui
+    proton-vpn
     openvpn
     godot
 
