@@ -16,6 +16,8 @@
     ./plugins/lualine.nix
     ./plugins/formatters.nix
     ./plugins/todo-comments.nix
+    ./plugins/debugger
+    ./plugins/debugger/python.nix
   ];
 
   programs.nixvim = {
