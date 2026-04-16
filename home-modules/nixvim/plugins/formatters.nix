@@ -17,7 +17,7 @@
         settings = {
           formatters_by_ft = {
             lua = [ "stylua" ];
-            python = [ "ruff" ];
+            python = [ "ruff_format" ];
             rust = [ "rustfmt" ];
             cpp = [ "clang-format" ];
             nix = [ "nixfmt" ];
