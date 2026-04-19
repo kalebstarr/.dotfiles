@@ -26,6 +26,7 @@
             javascript = [ "prettier" ];
             zig = [ "zigfmt" ];
             go = [ "gofmt" ];
+            clojure = [ "cljfmt" ];
           };
         };
       };
