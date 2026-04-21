@@ -27,6 +27,7 @@
             zig = [ "zigfmt" ];
             go = [ "gofmt" ];
             clojure = [ "cljfmt" ];
+            elixir = [ "mix" ];
           };
         };
       };
