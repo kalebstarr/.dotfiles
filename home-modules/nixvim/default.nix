@@ -18,6 +18,7 @@
     ./plugins/todo-comments.nix
     ./plugins/debugger
     ./plugins/debugger/python.nix
+    ./plugins/harpoon.nix
   ];
 
   programs.nixvim = {
