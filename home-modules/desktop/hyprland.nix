@@ -11,6 +11,8 @@
     enable = true;
     systemd.enable = false;
 
+    configType = "hyprlang";
+
     settings = {
       monitor = "eDP-1,1920x1080@60,auto,1";
 
