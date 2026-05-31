@@ -22,8 +22,8 @@
     ../home-modules/terminal/foot.nix
     ../home-modules/terminal/ghostty.nix
 
-    ../home-modules/desktop/hyprland.nix
-    ../home-modules/desktop/waybar.nix
+    ../home-modules/desktop/niri.nix
+    ../home-modules/desktop/noctalia.nix
     ../home-modules/desktop/stylix.nix
     inputs.stylix.homeModules.stylix
 
@@ -64,7 +64,6 @@
   stylix.targets = {
     gtk.enable = true;
     gnome.enable = true;
-    hyprland.enable = true;
   };
 
   programs.home-manager.enable = true;

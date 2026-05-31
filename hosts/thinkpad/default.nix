@@ -38,7 +38,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
         user = "kaleb";
       };
     };
@@ -55,8 +55,8 @@
     zsh
 
     tuigreet
-    hyprland-qtutils
     uwsm
+    xwayland-satellite
 
     brightnessctl
     playerctl
@@ -70,19 +70,20 @@
     pamixer
   ];
 
-  programs.hyprland = {
+  programs.niri = {
     enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
   };
 
   xdg.portal = {
     enable = true;
     config.common.default = [
-      "hyprland"
+      "gnome"
       "gtk"
     ];
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   services.pulseaudio.enable = false;
