@@ -16,8 +16,7 @@
         };
         ts_ls.enable = true;
         elixirls.enable = true;
-        gopls.enable = true;
-        clojure.enable = true;
+        lua_ls.enable = true;
       };
       keymaps = {
         lspBuf = {
