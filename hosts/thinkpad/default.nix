@@ -50,7 +50,6 @@
     git
     kitty
     foot
-    wofi
     curl
     zsh
 
