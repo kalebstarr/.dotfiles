@@ -49,6 +49,7 @@ spawn-at-startup "noctalia-shell"
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+F1 { show-hotkey-overlay; }
 
     Mod+Return { spawn "ghostty"; }
     Mod+T { spawn "ghostty"; }
