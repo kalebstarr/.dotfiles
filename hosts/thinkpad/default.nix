@@ -9,6 +9,12 @@
   ...
 }:
 
+let
+  niriSession = pkgs.writeShellScript "niri-session" ''
+    exec ${pkgs.uwsm}/bin/uwsm start -- ${pkgs.niri}/bin/niri --session
+  '';
+in
+
 {
   imports = [
     # Include the results of the hardware scan.
@@ -38,7 +44,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd ${niriSession}";
         user = "kaleb";
       };
     };
