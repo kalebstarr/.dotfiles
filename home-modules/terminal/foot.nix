@@ -13,10 +13,6 @@
         style = "beam";
         blink = "yes";
       };
-      colors = {
-        background = "1e1e2e";
-        foreground = "cdd6f4";
-      };
       bell = {
         urgent = "no";
         notify = "no";

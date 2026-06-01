@@ -24,8 +24,8 @@ layout {
 
     focus-ring {
         width 2
-        active-color "#89b4fa"
-        inactive-color "#45475a"
+        active-color "@base0D@"
+        inactive-color "@base03@"
     }
 
     border {
@@ -43,7 +43,7 @@ layout {
 
 prefer-no-csd
 
-spawn-at-startup "swaybg" "-i" "/home/kaleb/.dotfiles/wallpapers/Sunset.png" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "@wallpaper@" "-m" "fill"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "noctalia-shell"
 
