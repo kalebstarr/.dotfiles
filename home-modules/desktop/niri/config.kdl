@@ -44,7 +44,7 @@ prefer-no-csd
 
 spawn-at-startup "swaybg" "-i" "/home/kaleb/.dotfiles/wallpapers/Sunset.png" "-m" "fill"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "quickshell" "-c" "noctalia"
+spawn-at-startup "noctalia-shell"
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
