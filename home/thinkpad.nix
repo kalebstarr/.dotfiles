@@ -22,7 +22,7 @@
     ../home-modules/terminal/foot.nix
     ../home-modules/terminal/ghostty.nix
 
-    ../home-modules/desktop/niri.nix
+    ../home-modules/desktop/niri
     ../home-modules/desktop/noctalia.nix
     ../home-modules/desktop/stylix.nix
     inputs.stylix.homeModules.stylix
