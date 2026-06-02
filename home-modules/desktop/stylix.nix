@@ -37,7 +37,12 @@
       };
     };
 
-    opacity.terminal = 0.9;
+    opacity = {
+      terminal = 0.9;
+      applications = 0.95;
+      desktop = 0.95;
+      popups = 0.95;
+    };
   };
 
 }
