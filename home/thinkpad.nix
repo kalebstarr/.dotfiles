@@ -23,6 +23,7 @@
     ../home-modules/terminal/ghostty.nix
 
     ../home-modules/desktop/niri
+    inputs.noctalia.homeModules.default
     ../home-modules/desktop/noctalia
     ../home-modules/desktop/stylix.nix
     inputs.stylix.homeModules.stylix
