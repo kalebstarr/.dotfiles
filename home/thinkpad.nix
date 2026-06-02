@@ -64,6 +64,7 @@
   stylix.targets = {
     gtk.enable = true;
     gnome.enable = true;
+    noctalia-shell.enable = true;
   };
 
   programs.home-manager.enable = true;
