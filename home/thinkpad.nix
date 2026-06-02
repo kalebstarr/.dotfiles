@@ -24,7 +24,7 @@
 
     ../home-modules/desktop/niri
     inputs.noctalia.homeModules.default
-    ../home-modules/desktop/noctalia
+    ../home-modules/desktop/noctalia.nix
     ../home-modules/desktop/stylix.nix
     inputs.stylix.homeModules.stylix
 
