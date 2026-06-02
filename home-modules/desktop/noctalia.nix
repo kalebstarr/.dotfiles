@@ -29,7 +29,11 @@
           ];
           right = [
             { id = "Tray"; }
-            { id = "Battery"; }
+            {
+              id = "Battery";
+              alwaysShowPercentage = true;
+              warningThreshold = 20;
+            }
             { id = "Volume"; }
             { id = "Brightness"; }
             { id = "ControlCenter"; }
