@@ -43,6 +43,12 @@
       desktop = 0.95;
       popups = 0.95;
     };
+
+    targets.nixvim.transparentBackground = {
+      main = true;
+      numberLine = true;
+      signColumn = true;
+    };
   };
 
 }
