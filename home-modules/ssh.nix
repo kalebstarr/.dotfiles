@@ -6,17 +6,17 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {
-        addKeysToAgent = "yes";
-        identityFile = "~/.ssh/id_ed25519";
-        serverAliveInterval = 60;
-        serverAliveCountMax = 3;
+        AddKeysToAgent = "yes";
+        IdentityFile = "~/.ssh/id_ed25519";
+        ServerAliveInterval = 60;
+        ServerAliveCountMax = 3;
       };
       "github.com" = {
-        hostname = "github.com";
-        user = "git";
-        identityFile = "~/.ssh/id_ed25519";
+        HostName = "github.com";
+        User = "git";
+        IdentityFile = "~/.ssh/id_ed25519";
       };
     };
   };
