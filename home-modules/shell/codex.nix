@@ -6,20 +6,18 @@
     enableMcpIntegration = false;
 
     context = ''
-      You are running on my NixOS machine.
+      Start each session by orienting yourself in the current workspace before acting.
 
-      Hard constraints:
-      - Work only inside the current working directory unless I explicitly approve otherwise.
+      Boundaries:
+      - Work only inside the current workspace unless I explicitly approve otherwise.
       - Never use sudo.
       - Never read .env files, secrets, SSH material, or credentials.
       - Do not use the network.
-      - Prefer the workspace flake or devenv configuration over ad-hoc setup.
 
-      Environment selection:
-      - First inspect the workspace for flake.nix, devenv.nix, devenv.yaml, .envrc, and shell.nix.
-      - Prefer the workspace flake when it defines a suitable dev shell.
-      - If there is no suitable flake dev shell, prefer devenv when present.
-      - Before running project commands, explain which environment definition you chose.
+      Session startup:
+      - Inspect the workspace for project instructions and environment definitions before running project commands.
+      - Prefer the workspace flake, devenv, or shell.nix over ad-hoc setup when one is available.
+      - State which environment definition you are using before running commands that depend on it.
     '';
 
     settings = {
