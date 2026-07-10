@@ -14,7 +14,7 @@
     ../home-modules/shell/zoxide.nix
     ../home-modules/shell/direnv.nix
     ../home-modules/shell/scripts.nix
-    ../home-modules/shell/codex.nix
+    ../home-modules/shell/codex
     ../home-modules/git.nix
     ../home-modules/ssh.nix
     ../home-modules/tmux.nix
