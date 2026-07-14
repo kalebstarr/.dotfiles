@@ -18,6 +18,7 @@
     ../home-modules/git.nix
     ../home-modules/ssh.nix
     ../home-modules/tmux.nix
+    ../home-modules/esp32.nix
 
     ../home-modules/terminal/foot.nix
     ../home-modules/terminal/ghostty.nix

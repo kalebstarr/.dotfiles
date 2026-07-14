@@ -20,6 +20,7 @@
 
   wsl.enable = true;
   wsl.defaultUser = "kaleb";
+  wsl.usbip.enable = true;
 
   networking.hostName = "wsl";
 

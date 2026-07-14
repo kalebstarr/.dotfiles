@@ -116,12 +116,6 @@ in
     platformio-core.udev
   ];
 
-  users.users.kaleb = {
-    extraGroups = [
-      "dialout"
-    ];
-  };
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
