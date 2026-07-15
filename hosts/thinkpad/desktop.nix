@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     kitty
-    uwsm
     playerctl
     pavucontrol
     pamixer

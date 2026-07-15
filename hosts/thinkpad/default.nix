@@ -2,18 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
-let
-  niriSession = pkgs.writeShellScript "niri-session" ''
-    exec ${pkgs.uwsm}/bin/uwsm start -- ${pkgs.niri}/bin/niri --session
-  '';
-in
+{ pkgs, ... }:
 
 {
   imports = [
@@ -44,11 +33,29 @@ in
   services.getty.autologinUser = null;
   services.greetd = {
     enable = true;
+    settings.default_session.user = "greeter";
+  };
+  programs.regreet = {
+    enable = true;
     settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd ${niriSession}";
-        user = "kaleb";
+      background = {
+        path = ../../wallpapers/Sunset.png;
+        fit = "Cover";
       };
+      GTK.application_prefer_dark_theme = true;
+    };
+    theme = {
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3";
+    };
+    font = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
+      size = 16;
+    };
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
     };
   };
 
@@ -56,8 +63,6 @@ in
     vim
     wget
     curl
-
-    tuigreet
   ];
 
   programs.firefox.enable = true;
