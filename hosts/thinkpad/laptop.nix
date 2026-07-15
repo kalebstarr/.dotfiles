@@ -9,7 +9,7 @@
   ];
 
   services.blueman.enable = true;
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
 
   services.tlp.enable = true;
   services.acpid.enable = true;
