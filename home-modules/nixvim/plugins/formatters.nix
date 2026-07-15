@@ -8,6 +8,7 @@
     ruff
     prettierd
     clang-tools
+    google-java-format
   ];
 
   programs.nixvim = {
@@ -21,9 +22,9 @@
             rust = [ "rustfmt" ];
             cpp = [ "clang-format" ];
             nix = [ "nixfmt" ];
-            html = [ "prettier" ];
-            css = [ "prettier" ];
-            javascript = [ "prettier" ];
+            html = [ "prettierd" ];
+            css = [ "prettierd" ];
+            javascript = [ "prettierd" ];
             zig = [ "zigfmt" ];
             go = [ "gofmt" ];
             clojure = [ "cljfmt" ];
@@ -44,8 +45,8 @@
         action.__raw = ''
           function()
             require("conform").format({
-              async = true,  -- Non-blocking
-              lsp_fallback = true,  -- Use LSP if formatter fails
+              async = true,
+              lsp_format = "fallback",
               timeout_ms = 1000,
             })
           end
