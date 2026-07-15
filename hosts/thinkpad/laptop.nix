@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     brightnessctl
-    tlp
     acpi
     lm_sensors
   ];

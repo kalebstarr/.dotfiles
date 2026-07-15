@@ -55,9 +55,7 @@ in
   environment.systemPackages = with pkgs; [
     vim
     wget
-    git
     curl
-    zsh
 
     tuigreet
   ];

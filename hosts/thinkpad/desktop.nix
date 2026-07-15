@@ -3,13 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     kitty
-    foot
     uwsm
     xwayland-satellite
     playerctl
     pavucontrol
-    pipewire
-    wireplumber
     pamixer
   ];
 
