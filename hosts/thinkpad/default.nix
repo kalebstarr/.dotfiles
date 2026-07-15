@@ -19,6 +19,8 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./laptop.nix
+    ./desktop.nix
   ];
 
   nix.gc = {
@@ -54,67 +56,13 @@ in
     vim
     wget
     git
-    kitty
-    foot
     curl
     zsh
 
     tuigreet
-    uwsm
-    xwayland-satellite
-
-    brightnessctl
-    playerctl
-    tlp
-    acpi
-    lm_sensors
-
-    pavucontrol
-    pipewire
-    wireplumber
-    pamixer
   ];
-
-  programs.niri = {
-    enable = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    config.common.default = [
-      "gnome"
-      "gtk"
-    ];
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
-
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
-  };
-  services.blueman.enable = true;
-  hardware.bluetooth.enable = false;
-  services.tlp.enable = true;
 
   programs.firefox.enable = true;
-
-  services.acpid.enable = true;
-  hardware.enableAllFirmware = true;
-
-  services.upower.enable = true;
-  services.thermald.enable = true;
-
-  # Dev with Arduino and IOT devices
-  services.udev.packages = with pkgs; [
-    platformio-core.udev
-  ];
 
   programs.steam = {
     enable = true;
