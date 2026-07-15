@@ -38,11 +38,18 @@
   programs.regreet = {
     enable = true;
     settings = {
+      skip_selection = true;
+      appearance.greeting_msg = "Welcome back";
       background = {
         path = ../../wallpapers/Sunset.png;
         fit = "Cover";
       };
       GTK.application_prefer_dark_theme = true;
+      widget.clock = {
+        format = "%A  %H:%M";
+        resolution = "1s";
+        label_width = 220;
+      };
     };
     theme = {
       package = pkgs.adw-gtk3;
@@ -57,6 +64,90 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
+    extraCss = ''
+      window {
+        color: #c0caf5;
+      }
+
+      frame.background {
+        background-color: rgba(26, 27, 38, 0.92);
+        border: 1px solid rgba(122, 162, 247, 0.45);
+        border-radius: 18px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      frame.background grid {
+        padding: 18px;
+      }
+
+      frame.background label {
+        color: #c0caf5;
+      }
+
+      entry,
+      passwordentry,
+      combobox button {
+        min-height: 44px;
+        padding: 0 14px;
+        color: #c0caf5;
+        background-color: rgba(22, 22, 30, 0.92);
+        border: 1px solid #444b6a;
+        border-radius: 10px;
+        box-shadow: none;
+      }
+
+      entry:focus,
+      passwordentry:focus,
+      combobox button:focus {
+        border-color: #2ac3de;
+        box-shadow: 0 0 0 2px rgba(42, 195, 222, 0.2);
+      }
+
+      button {
+        min-height: 40px;
+        padding: 0 18px;
+        color: #a9b1d6;
+        background-color: #2f3549;
+        border: 1px solid #444b6a;
+        border-radius: 10px;
+        box-shadow: none;
+      }
+
+      button:hover {
+        color: #c0caf5;
+        background-color: #444b6a;
+      }
+
+      button.suggested-action {
+        color: #1a1b26;
+        background-color: #2ac3de;
+        border-color: #2ac3de;
+        font-weight: bold;
+      }
+
+      button.suggested-action:hover {
+        background-color: #7dcfff;
+      }
+
+      button.destructive-action {
+        min-height: 34px;
+        color: #a9b1d6;
+        background-color: rgba(26, 27, 38, 0.82);
+        border-color: #444b6a;
+      }
+
+      button.destructive-action:hover {
+        color: #f7768e;
+        border-color: #f7768e;
+      }
+
+      infobar {
+        color: #c0caf5;
+        background-color: rgba(22, 22, 30, 0.94);
+        border: 1px solid #2ac3de;
+        border-radius: 10px;
+      }
+    '';
   };
 
   environment.systemPackages = with pkgs; [
