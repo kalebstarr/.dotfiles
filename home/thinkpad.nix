@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -8,8 +8,6 @@
     ../home-modules/terminal/foot.nix
 
     ../home-modules/desktop/niri
-    inputs.noctalia.homeModules.default
-    ../home-modules/desktop/noctalia.nix
   ];
 
   home.packages = with pkgs; [
@@ -31,7 +29,6 @@
   stylix.targets = {
     gtk.enable = true;
     gnome.enable = true;
-    noctalia-shell.enable = true;
   };
 
 }

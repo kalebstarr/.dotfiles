@@ -4,13 +4,14 @@
   environment.systemPackages = with pkgs; [
     kitty
     uwsm
-    xwayland-satellite
     playerctl
     pavucontrol
     pamixer
   ];
 
   programs.niri.enable = true;
+
+  security.pam.services.swaylock = { };
 
   xdg.portal = {
     enable = true;

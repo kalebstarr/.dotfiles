@@ -32,10 +32,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
