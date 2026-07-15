@@ -3,7 +3,6 @@
 {
 
   home.packages = with pkgs; [
-    tmux
     (pkgs.writeShellScriptBin "ts" ''
       set -euo pipefail
 

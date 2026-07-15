@@ -22,9 +22,6 @@
       ];
     };
 
-    initContent = ''
-      eval "$(starship init zsh)"
-    '';
   };
 
 }
