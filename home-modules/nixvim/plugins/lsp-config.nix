@@ -17,6 +17,7 @@
         ts_ls.enable = true;
         elixirls.enable = true;
         lua_ls.enable = true;
+        jdtls.enable = true;
       };
       keymaps = {
         lspBuf = {

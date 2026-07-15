@@ -28,6 +28,7 @@
             go = [ "gofmt" ];
             clojure = [ "cljfmt" ];
             elixir = [ "mix" ];
+            java = [ "google-java-format" ];
           };
         };
       };
