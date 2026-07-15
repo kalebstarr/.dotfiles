@@ -1,42 +1,16 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 {
 
   imports = [
-    ../home-modules/shell/zsh.nix
-    ../home-modules/shell/starship.nix
-    ../home-modules/shell/fzf.nix
-    ../home-modules/shell/zoxide.nix
-    ../home-modules/shell/direnv.nix
-    ../home-modules/shell/scripts.nix
-    ../home-modules/git.nix
-    ../home-modules/ssh.nix
-    ../home-modules/tmux.nix
-    ../home-modules/esp32.nix
+    ./common.nix
 
     ../home-modules/terminal/foot.nix
-    ../home-modules/terminal/ghostty.nix
 
     ../home-modules/desktop/niri
     inputs.noctalia.homeModules.default
     ../home-modules/desktop/noctalia.nix
-    ../home-modules/desktop/stylix.nix
-    inputs.stylix.homeModules.stylix
-
-    ../home-modules/nixvim
-
-    # inputs.nix-doom-emacs-unstraightened.hmModule
-    # ../home-modules/doom-emacs
   ];
-
-  home.username = "kaleb";
-  home.homeDirectory = "/home/kaleb";
-  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     brave
@@ -45,14 +19,6 @@
     proton-vpn
     openvpn
     godot
-
-    htop
-    fastfetch
-    yazi
-    ripgrep
-    fd
-    lazygit
-    devenv
 
     noto-fonts
     noto-fonts-cjk-sans
@@ -67,7 +33,5 @@
     gnome.enable = true;
     noctalia-shell.enable = true;
   };
-
-  programs.home-manager.enable = true;
 
 }
