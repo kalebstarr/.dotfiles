@@ -49,46 +49,46 @@
       # nix-doom-emacs-unstraightened,
       ...
     }@inputs:
+    let
+      mkHost =
+        {
+          hostModule,
+          homeModule,
+          extraModules ? [ ],
+        }:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            hostModule
+            ./modules/common.nix
+          ]
+          ++ extraModules
+          ++ [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.kaleb = import homeModule;
+                extraSpecialArgs = { inherit inputs; };
+                backupFileExtension = "backup";
+              };
+            }
+            stylix.nixosModules.stylix
+          ];
+        };
+    in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/thinkpad
-          ./modules/common.nix
-          nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.kaleb = import ./home/thinkpad.nix;
-              extraSpecialArgs = { inherit inputs; };
-              backupFileExtension = "backup";
-            };
-          }
-          stylix.nixosModules.stylix
-        ];
+      nixosConfigurations.thinkpad = mkHost {
+        hostModule = ./hosts/thinkpad;
+        homeModule = ./home/thinkpad.nix;
+        extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1 ];
       };
 
-      nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/wsl
-          ./modules/common.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.kaleb = import ./home/wsl.nix;
-              extraSpecialArgs = { inherit inputs; };
-              backupFileExtension = "backup";
-            };
-          }
-          stylix.nixosModules.stylix
-        ];
+      nixosConfigurations.wsl = mkHost {
+        hostModule = ./hosts/wsl;
+        homeModule = ./home/wsl.nix;
       };
     };
 
