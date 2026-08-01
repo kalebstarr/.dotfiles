@@ -35,7 +35,7 @@
     enable = true;
     settings.default_session.user = "greeter";
   };
-  programs.regreet = {
+  services.displayManager.regreet = {
     enable = true;
     settings = {
       skip_selection = true;
