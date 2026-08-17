@@ -24,12 +24,12 @@
       "video"
       "dialout"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   security.sudo.wheelNeedsPassword = false;
   nixpkgs.config.allowUnfree = true;
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   programs.nix-ld = {
     enable = true;

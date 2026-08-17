@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../home-modules/shell/zsh.nix
+    ../home-modules/shell/fish.nix
     ../home-modules/shell/starship.nix
     ../home-modules/shell/fzf.nix
     ../home-modules/shell/zoxide.nix
