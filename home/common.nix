@@ -34,6 +34,7 @@
       fd
       lazygit
       devenv
+      python3
     ];
   };
 
