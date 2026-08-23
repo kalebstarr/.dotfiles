@@ -19,6 +19,7 @@
     ./plugins/debugger
     ./plugins/debugger/python.nix
     ./plugins/harpoon.nix
+    ./plugins/tidal-cycles.nix
   ];
 
   programs.nixvim = {
