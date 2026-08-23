@@ -32,6 +32,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    vim-tidal-src = {
+      url = "github:tidalcycles/vim-tidal";
+      flake = false;
+    };
+
   };
 
   outputs =
