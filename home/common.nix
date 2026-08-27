@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports = [
     ../home-modules/shell/zsh.nix
@@ -26,16 +29,21 @@
     homeDirectory = "/home/kaleb";
     stateVersion = "26.05";
 
-    packages = with pkgs; [
-      htop
-      fastfetch
-      yazi
-      ripgrep
-      fd
-      lazygit
-      devenv
-      python3
-    ];
+    packages =
+      (with pkgs; [
+        htop
+        fastfetch
+        yazi
+        ripgrep
+        fd
+        lazygit
+        devenv
+        python3
+      ])
+      ++ (with llm-agents; [
+        opencode2
+        pi
+      ]);
   };
 
   programs.home-manager.enable = true;

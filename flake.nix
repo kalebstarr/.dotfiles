@@ -32,6 +32,8 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    llm-agents.url = "github:numtide/llm-agents.nix";
+
   };
 
   outputs =
