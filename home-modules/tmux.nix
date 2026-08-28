@@ -31,6 +31,10 @@
       bind | split-window -h -c "#{pane_current_path}"
       bind - split-window -v -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
+
+      set -s extended-keys on
+      set -s extended-keys-format csi-u
+      set -as terminal-features 'xterm*:extkeys'
     '';
   };
 
