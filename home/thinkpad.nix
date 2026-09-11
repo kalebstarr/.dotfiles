@@ -8,6 +8,8 @@
     ../home-modules/terminal/foot.nix
 
     ../home-modules/desktop/niri
+
+    ../home-modules/pi.nix
   ];
 
   home.packages = with pkgs; [
