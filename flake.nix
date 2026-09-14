@@ -38,6 +38,12 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dank-qml-common.follows = "dms/dank-qml-common";
+    };
   };
 
   outputs =
