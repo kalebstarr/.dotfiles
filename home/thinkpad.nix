@@ -31,6 +31,24 @@
   programs.dank-material-shell = {
     enable = true;
     systemd.enable = true;
+
+    settings = {
+      configVersion = 18;
+      acLockTimeout = 900;
+      acMonitorTimeout = 1200;
+      batteryLockTimeout = 900;
+      batteryMonitorTimeout = 1200;
+      batteryLowThreshold = 20;
+      batteryNotifyLow = true;
+      batteryCriticalThreshold = 10;
+      batteryNotifyCritical = true;
+      lockBeforeSuspend = true;
+    };
+
+    session = {
+      configVersion = 4;
+      wallpaperPath = toString ../wallpapers/Sunset.png;
+    };
   };
 
   home.pointerCursor = {

@@ -42,6 +42,17 @@ layout {
 
 prefer-no-csd
 
+// DMS windows should float and its wallpaper layer participates in niri blur.
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+F1 { show-hotkey-overlay; }
