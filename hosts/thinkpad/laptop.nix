@@ -8,10 +8,11 @@
     enableAllFirmware = true;
   };
 
+  users.users.kaleb.extraGroups = [ "input" ];
+
   services = {
     accounts-daemon.enable = true;
     power-profiles-daemon.enable = true;
-    thermald.enable = true;
     upower.enable = true;
     logind.settings.Login.HandlePowerKey = "suspend";
 
