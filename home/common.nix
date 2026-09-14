@@ -18,9 +18,6 @@ in
 
     ../home-modules/terminal/ghostty.nix
 
-    ../home-modules/desktop/stylix.nix
-    inputs.stylix.homeModules.stylix
-
     ../home-modules/nixvim
   ];
 

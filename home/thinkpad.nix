@@ -1,13 +1,12 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
 
   imports = [
     ./common.nix
 
-    ../home-modules/terminal/foot.nix
-
     ../home-modules/desktop/niri
+    inputs.dms.homeModules.dank-material-shell
 
     ../home-modules/pi.nix
   ];
@@ -25,12 +24,13 @@
     noto-fonts-color-emoji
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
-    base16-schemes
+    material-symbols
+    papirus-icon-theme
   ];
 
-  stylix.targets = {
-    gtk.enable = true;
-    gnome.enable = true;
+  programs.dank-material-shell = {
+    enable = true;
+    systemd.enable = true;
   };
 
 }

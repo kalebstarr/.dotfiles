@@ -46,7 +46,6 @@
       home-manager,
       nixvim,
       nixos-wsl,
-      stylix,
       nixos-hardware,
       # nix-doom-emacs-unstraightened,
       ...
@@ -77,7 +76,6 @@
                 backupFileExtension = "backup";
               };
             }
-            stylix.nixosModules.stylix
           ];
         };
     in
