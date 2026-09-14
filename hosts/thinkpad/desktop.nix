@@ -1,27 +1,11 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    kitty
-    playerctl
-    pavucontrol
-    pamixer
-  ];
-
   programs.niri.enable = true;
 
-  security.pam.services.swaylock = { };
-
-  xdg.portal = {
-    enable = true;
-    config.common.default = [
-      "gnome"
-      "gtk"
-    ];
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
+  environment = {
+    systemPackages = with pkgs; [ xwayland-satellite ];
+    sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
   services.pulseaudio.enable = false;
@@ -29,8 +13,6 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
   };
 
   security.rtkit.enable = true;

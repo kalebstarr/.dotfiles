@@ -1,23 +1,22 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    acpi
-    lm_sensors
-  ];
+  environment.systemPackages = with pkgs; [ brightnessctl ];
 
-  services.blueman.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    enableAllFirmware = true;
+  };
 
-  services.tlp.enable = true;
-  services.acpid.enable = true;
-  hardware.enableAllFirmware = true;
-  services.upower.enable = true;
-  services.thermald.enable = true;
+  services = {
+    accounts-daemon.enable = true;
+    power-profiles-daemon.enable = true;
+    thermald.enable = true;
+    upower.enable = true;
+    logind.settings.Login.HandlePowerKey = "suspend";
 
-  # Dev with Arduino and IOT devices
-  services.udev.packages = with pkgs; [
-    platformio-core.udev
-  ];
+    udev.packages = with pkgs; [
+      platformio-core.udev
+    ];
+  };
 }
