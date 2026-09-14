@@ -34,6 +34,10 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
 
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
