@@ -15,6 +15,7 @@ in
     ../home-modules/ssh.nix
     ../home-modules/tmux.nix
     ../home-modules/esp32.nix
+    ../home-modules/jujutsu.nix
 
     ../home-modules/terminal/ghostty.nix
 
