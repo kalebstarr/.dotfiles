@@ -1085,7 +1085,7 @@ validation; system activation remains a separate step.
 | `hosts/thinkpad/default.nix` | Replace the complete ReGreet block with native nixpkgs DankGreeter using Niri and password login. Remove the old explicit greeter user. Keep keyboard, boot, GC, networking and state version; add German regional locale overrides and five boot generations. Remove Firefox and the two Steam server/remote-play firewall flags, preserving local gaming. Retain the commented printing and SSH settings. |
 | `hosts/thinkpad/desktop.nix` | Enable the native DMS and DankSearch modules and DMS lock authentication. Keep Niri, portals, PipeWire ALSA/Pulse/WirePlumber and rtkit; remove JACK and the duplicate local Swaylock PAM declaration. Remove retired desktop package entries, moving pavucontrol to ThinkPad Home Manager. Select the agreed DMS integrations, disable calendar-event integration and explicitly disable power-profiles-daemon. |
 | `hosts/thinkpad/laptop.nix` | Keep Bluetooth, thermald, UPower, firmware, device tools and PlatformIO rules. Replace Blueman controls with DMS, enable TLP's power-profile interface, set BAT0 start/stop thresholds to 85/90, add manual fwupd availability, remove unused acpid, and set the agreed lid/suspend behavior. |
-| `hosts/thinkpad/dms-greeter-sync.nix` (new) | Provide a narrowly scoped service that refreshes the greeter's copies of DMS settings, colors and referenced wallpapers when those files change, as well as before greeter startup. Use the module's `/var/lib/dms-greeter` location, rewrite copied wallpaper paths and set greeter ownership. Do not restart greetd to update a theme. |
+| Greeter synchronization (revised during implementation) | Use only native `services.displayManager.dms-greeter.configHome`. Settings, colors and wallpapers are copied at greetd startup, normally after reboot. The user accepted this timing instead of custom synchronization scripts/services. |
 | `home/thinkpad.nix` | Remove the Foot import and Godot package. Add Nautilus and pavucontrol, declare Brave and Nautilus MIME defaults, and import the new DMS home module. Apply ThinkPad-only Stylix target selection. Keep Obsidian, Legcord, ProtonVPN, OpenVPN, fonts and the Pi speech module. |
 | `home-modules/desktop/dms.nix` (new) | Define the agreed initial DMS bar, notification, lock, idle, wallpaper, font, cursor and clipboard settings; seed writable settings/session/clipboard files only when absent. GUI edits remain persistent. Declare DankSearch's restricted roots and filename-only indexing configuration. Configure desktop theme ownership and required generated-file references. |
 | `home-modules/desktop/niri/default.nix` | Remove Waybar/session imports and swaybg. Keep xwayland-satellite available for Niri's automatic integration. Replace Stylix color/wallpaper interpolation with a DMS color include and a valid initial fallback so first login works before matugen has generated colors. |
@@ -1131,7 +1131,7 @@ DankSearch 0.3.2 and the existing Stylix revision:
   Stylix is enabled even with autoEnable disabled. Keep cursor baseline
   ownership there, with DMS initially following the system cursor.
 - The greeter module's built-in copy runs only at greetd service startup.
-  The proposed synchronization service addresses later DMS changes. The pinned
+  The user subsequently accepted startup-only synchronization through the native module. The pinned
   greeter reads settings/session/colors without watching them live: copied
   changes take effect for the next greeter instance. Do not promise instant
   updates to an already open login screen or run upstream's non-NixOS sync tool.
@@ -1183,7 +1183,9 @@ Implementation sequence:
 Progress: step 1 implemented. Targeted evaluation confirms TLP/tlp-pd and
 85/90 thresholds, disabled JACK/acpid, inherited GNOME Keyring and Niri portals,
 and the dms-greeter account/session. Desktop package removal is staged with the
-Home Manager migration; do not activate intermediate commits. Steps 2–6 pending.
+Home Manager migration; do not activate intermediate commits. Step 2 complete using native `configHome` only, as agreed during implementation.
+The custom synchronization files and tests were removed before committing.
+Steps 3–6 pending.
 No system activation performed.
 
 ## References
