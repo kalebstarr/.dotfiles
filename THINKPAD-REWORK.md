@@ -1180,7 +1180,11 @@ Implementation sequence:
 5. Shared-home cleanup and deletion of remaining unused configuration/references.
 6. Cross-host evaluation, build and final review.
 
-Progress: preparation complete; steps 1–6 pending. No system activation performed.
+Progress: step 1 implemented. Targeted evaluation confirms TLP/tlp-pd and
+85/90 thresholds, disabled JACK/acpid, inherited GNOME Keyring and Niri portals,
+and the dms-greeter account/session. Desktop package removal is staged with the
+Home Manager migration; do not activate intermediate commits. Steps 2–6 pending.
+No system activation performed.
 
 ## References
 
