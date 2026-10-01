@@ -1193,7 +1193,20 @@ active on ThinkPad, and Ghostty retains its font, padding and opacity with
 No existing DMS preference files are overwritten. Step 4 implemented: Niri uses verified DMS IPC/screenshot commands and an
 optional generated color include with valid fallback colors. Native `niri
 validate` passes. Retired Waybar/session modules are deleted; XWayland remains
-available for Niri's on-demand startup. Steps 5–6 pending.
+available for Niri's on-demand startup. Step 5 implemented: OpenCode and unused Emacs/Foot/Hyprland configuration
+removed; Git uses nvim; zoxide and Home Manager fzf are the sole integrations.
+The installed Oh My Zsh source confirms the preserved fd default command.
+WSL toplevel evaluation succeeds. Step 6 in progress.
+
+Implementation compatibility correction: the repository's existing lockfile
+actually selects nixpkgs `7a0f122f5090`, DMS 1.6.2 and DankSearch 1.6.0.
+The earlier 1.5.3/0.3.2 findings describe an older source, not this lockfile.
+Full evaluation caught removed DMS module options; use native built-in
+monitoring/clipboard/network support and default matugen/cava packages instead.
+No calendar backend is installed. Settings, IPC, screenshot flags, search schema,
+and generated theme paths were checked against the actual locked package sources.
+The native greeter module still copies themes at greetd startup. The lockfile
+has not been changed.
 No system activation performed.
 
 ## References

@@ -41,7 +41,6 @@ in
         python3
       ])
       ++ (with llm-agents; [
-        opencode2
         pi
       ]);
   };

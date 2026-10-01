@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-doom-emacs-unstraightened = {
-    #   url = "github:marienz/nix-doom-emacs-unstraightened";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +39,6 @@
       nixos-wsl,
       stylix,
       nixos-hardware,
-      # nix-doom-emacs-unstraightened,
       ...
     }@inputs:
     let

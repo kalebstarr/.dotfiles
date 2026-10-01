@@ -9,7 +9,7 @@
         name = "Kaleb";
         email = "kaleb.starr@proton.me";
       };
-      core.editor = "vim";
+      core.editor = "nvim";
       init.defaultBranch = "main";
       pull.rebase = true;
     };
