@@ -1185,7 +1185,12 @@ Progress: step 1 implemented. Targeted evaluation confirms TLP/tlp-pd and
 and the dms-greeter account/session. Desktop package removal is staged with the
 Home Manager migration; do not activate intermediate commits. Step 2 complete using native `configHome` only, as agreed during implementation.
 The custom synchronization files and tests were removed before committing.
-Steps 3–6 pending.
+Step 3 implemented: DMS writable first-use defaults, restricted filename-only
+DankSearch roots, Brave/Nautilus defaults, retained pavucontrol, and selective
+Stylix targets. Evaluation confirms only tmux/Nixvim/fontconfig targets are
+active on ThinkPad, and Ghostty retains its font, padding and opacity with
+`dankcolors`. GTK CSS and generated terminal colors remain writable by DMS.
+No existing DMS preference files are overwritten. Steps 4–6 pending.
 No system activation performed.
 
 ## References
