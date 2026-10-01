@@ -49,7 +49,7 @@ let
     clockDateFormat = "ddd, dd.MM.";
     showBatteryPercent = true;
     showBatteryPercentOnlyOnBattery = false;
-    notificationPopupPosition = 0; # Top right in DMS 1.5.3.
+    notificationPopupPosition = 0; # Top right.
     soundNewNotification = false;
     notificationHistoryEnabled = true;
     notificationHistoryMaxCount = 50;
@@ -162,7 +162,7 @@ in
         index_xattr_tags = false;
         index_paths = map (path: {
           inherit path;
-          max_depth = 0; # Unlimited in DankSearch 0.3.2.
+          max_depth = 0; # Unlimited.
           exclude_hidden = true;
           merge_default_exclude_dirs = true;
           extract_exif = false;
@@ -171,9 +171,11 @@ in
         }) searchRoots;
       };
 
-  # Matugen owns GTK CSS. These settings only establish the font baseline.
+  # HM owns the CSS imports/font baseline; matugen owns dank-colors.css.
   gtk = {
     enable = true;
+    gtk3.extraCss = ''@import url("dank-colors.css");'';
+    gtk4.extraCss = ''@import url("dank-colors.css");'';
     font = {
       name = "DejaVu Sans";
       package = pkgs.dejavu_fonts;

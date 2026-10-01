@@ -46,6 +46,15 @@
     configHome = "/home/kaleb";
   };
 
+  # DankGreeter's Niri session uses its own config, so set its login layout too.
+  environment.etc."greetd/niri_overrides.kdl".text = ''
+    input {
+      keyboard {
+        xkb { layout "de"; }
+      }
+    }
+  '';
+
   environment.systemPackages = with pkgs; [
     vim
     wget

@@ -1180,34 +1180,66 @@ Implementation sequence:
 5. Shared-home cleanup and deletion of remaining unused configuration/references.
 6. Cross-host evaluation, build and final review.
 
-Progress: step 1 implemented. Targeted evaluation confirms TLP/tlp-pd and
-85/90 thresholds, disabled JACK/acpid, inherited GNOME Keyring and Niri portals,
-and the dms-greeter account/session. Desktop package removal is staged with the
-Home Manager migration; do not activate intermediate commits. Step 2 complete using native `configHome` only, as agreed during implementation.
-The custom synchronization files and tests were removed before committing.
-Step 3 implemented: DMS writable first-use defaults, restricted filename-only
-DankSearch roots, Brave/Nautilus defaults, retained pavucontrol, and selective
-Stylix targets. Evaluation confirms only tmux/Nixvim/fontconfig targets are
-active on ThinkPad, and Ghostty retains its font, padding and opacity with
-`dankcolors`. GTK CSS and generated terminal colors remain writable by DMS.
-No existing DMS preference files are overwritten. Step 4 implemented: Niri uses verified DMS IPC/screenshot commands and an
-optional generated color include with valid fallback colors. Native `niri
-validate` passes. Retired Waybar/session modules are deleted; XWayland remains
-available for Niri's on-demand startup. Step 5 implemented: OpenCode and unused Emacs/Foot/Hyprland configuration
-removed; Git uses nvim; zoxide and Home Manager fzf are the sole integrations.
-The installed Oh My Zsh source confirms the preserved fd default command.
-WSL toplevel evaluation succeeds. Step 6 in progress.
+Repository implementation is complete; system activation remains pending.
 
-Implementation compatibility correction: the repository's existing lockfile
-actually selects nixpkgs `7a0f122f5090`, DMS 1.6.2 and DankSearch 1.6.0.
-The earlier 1.5.3/0.3.2 findings describe an older source, not this lockfile.
-Full evaluation caught removed DMS module options; use native built-in
-monitoring/clipboard/network support and default matugen/cava packages instead.
-No calendar backend is installed. Settings, IPC, screenshot flags, search schema,
-and generated theme paths were checked against the actual locked package sources.
-The native greeter module still copies themes at greetd startup. The lockfile
-has not been changed.
-No system activation performed.
+- Host defaults: native DMS/DankGreeter/DankSearch; TLP/tlp-pd with BAT0 85/90;
+  agreed lid behavior, fwupd, German regional formats and five boot entries.
+  Removed unused JACK, acpid, Blueman, Firefox and Steam hosting firewall flags.
+- Greeter synchronization: native `configHome` only. The user accepted copying
+  on greetd startup (normally reboot) instead of continuous synchronization.
+  Custom Python/service/timer/test files were removed before being committed.
+  `/etc/greetd/niri_overrides.kdl` preserves German input in the greeter's
+  separate Niri configuration, using the package's supported override include.
+- Home Manager: first-use writable DMS settings/session/clipboard defaults,
+  restricted filename-only search roots, Brave/Nautilus associations, pavucontrol,
+  Ghostty dynamic colors and selective tmux/Nixvim/fontconfig Stylix targets.
+  HM owns GTK CSS imports; DMS owns their generated `dank-colors.css` files.
+- Niri: DMS shortcuts and screenshots, optional generated colors with a valid
+  first-login fallback, on-demand XWayland. Retired desktop session modules
+  and their startup references are removed.
+- Shared cleanup: OpenCode, Emacs aliases, duplicate z/fzf plugins and unused
+  Doom/Foot/Hyprland files removed. Git uses nvim; fzf retains the verified
+  `fd --type f --hidden --exclude .git` default.
+
+Implementation compatibility correction: the existing lockfile selects
+nixpkgs `7a0f122f5090`, DMS 1.6.2 and DankSearch 1.6.0. The earlier 1.5.3/0.3.2
+findings above describe an older source, not this lockfile. Full evaluation
+caught removed DMS options; the implementation uses built-in monitoring,
+clipboard and networking support and the module's default matugen/cava packages.
+No calendar backend is installed. Settings, IPC, screenshots, search schema,
+generated theme paths and greeter startup copying were checked against the
+actual locked package sources. The lockfile is unchanged.
+
+Validation on 2026-10-01:
+
+- ThinkPad and WSL toplevel evaluation and full system builds passed, without
+  activation. Build commands used `nix build --no-link` for each host's
+  `config.system.build.toplevel`.
+- Generated Niri config validates through a symlink both before and after the
+  generated color include exists. DMS settings keys match the locked schema;
+  generated search TOML has exactly the six agreed roots and no text/EXIF/xattr
+  extraction. First-use initialization was exercised in a temporary directory:
+  files are writable, mode 0600, and a second run preserves local changes.
+- Effective comparison against pre-rework commit `0eb4375` confirms unchanged
+  WSL appearance, Ghostty, Neovim, tmux, Starship and SSH settings. ThinkPad's
+  generated Neovim and tmux files are identical to the originals.
+- Effective configuration confirms GNOME Keyring/login PAM integration,
+  DMS password PAM, GNOME/GTK portals, TLP profile service, disabled JACK/acpid/
+  power-profiles-daemon, closed Steam hosting ports, and correct service targets.
+  No old desktop user services remain; the existing SSH agent is retained.
+- Formatting and diff checks pass; no stale retired configuration references
+  remain. Protected modules, hardware configuration, WSL host file and state
+  versions were left unchanged.
+
+The three DMS preference/state files were absent at read-only inspection, so
+activation will seed the agreed defaults. If they exist by activation time,
+they will be preserved rather than overwritten. GUI edits subsequently persist.
+
+After separately approved activation, check password login/keyring unlocking,
+lock-before-suspend and external-display lid behavior, actual battery thresholds,
+clipboard/screenshots, greeter theme copying on its next startup, portals,
+Nautilus, audio/network/Bluetooth controls, and XWayland applications. These are
+runtime checks and have not been claimed as tested by the builds.
 
 ## References
 

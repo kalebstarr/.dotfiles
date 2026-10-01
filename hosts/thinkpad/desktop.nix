@@ -3,15 +3,11 @@
 {
   programs.niri.enable = true;
 
+  # Monitoring, clipboard paste and network controls are built in.
+  # The module supplies matugen/cava; no calendar backend is installed.
   programs.dms-shell = {
     enable = true;
     systemd.enable = true;
-    enableSystemMonitoring = true;
-    enableVPN = true;
-    enableDynamicTheming = true;
-    enableAudioWavelength = true;
-    enableCalendarEvents = false;
-    enableClipboardPaste = true;
   };
   programs.dsearch.enable = true;
   security.pam.services.dms = { };
