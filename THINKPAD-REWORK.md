@@ -1190,7 +1190,10 @@ DankSearch roots, Brave/Nautilus defaults, retained pavucontrol, and selective
 Stylix targets. Evaluation confirms only tmux/Nixvim/fontconfig targets are
 active on ThinkPad, and Ghostty retains its font, padding and opacity with
 `dankcolors`. GTK CSS and generated terminal colors remain writable by DMS.
-No existing DMS preference files are overwritten. Steps 4–6 pending.
+No existing DMS preference files are overwritten. Step 4 implemented: Niri uses verified DMS IPC/screenshot commands and an
+optional generated color include with valid fallback colors. Native `niri
+validate` passes. Retired Waybar/session modules are deleted; XWayland remains
+available for Niri's on-demand startup. Steps 5–6 pending.
 No system activation performed.
 
 ## References

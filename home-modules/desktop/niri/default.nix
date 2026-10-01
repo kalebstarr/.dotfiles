@@ -1,31 +1,7 @@
-{ config, pkgs, ... }:
-
-let
-  colors = config.lib.stylix.colors.withHashtag;
-  niriConfig = builtins.replaceStrings
-    [
-      "@base0D@"
-      "@base03@"
-      "@wallpaper@"
-    ]
-    [
-      colors.base0D
-      colors.base03
-      (toString config.stylix.image)
-    ]
-    (builtins.readFile ./config.kdl);
-in
+{ pkgs, ... }:
 
 {
-  imports = [
-    ../waybar.nix
-    ./session.nix
-  ];
-
-  home.packages = with pkgs; [
-    swaybg
-    xwayland-satellite
-  ];
-
-  xdg.configFile."niri/config.kdl".text = niriConfig;
+  # Niri starts XWayland on demand; no separate startup process is needed.
+  home.packages = [ pkgs.xwayland-satellite ];
+  xdg.configFile."niri/config.kdl".source = ./config.kdl;
 }

@@ -23,8 +23,8 @@ layout {
 
     focus-ring {
         width 2
-        active-color "@base0D@"
-        inactive-color "@base03@"
+        active-color "#7aa2f7"
+        inactive-color "#565f89"
     }
 
     border {
@@ -42,8 +42,8 @@ layout {
 
 prefer-no-csd
 
-spawn-at-startup "swaybg" "-i" "@wallpaper@" "-m" "fill"
-spawn-at-startup "xwayland-satellite"
+// The colors above are a first-login fallback until DMS generates this file.
+include optional=true "dms/colors.kdl"
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -51,8 +51,8 @@ binds {
 
     Mod+Return { spawn "ghostty"; }
     Mod+T { spawn "ghostty"; }
-    Mod+D { spawn "fuzzel"; }
-    Mod+E { spawn "thunar"; }
+    Mod+Space { spawn "dms" "ipc" "call" "launcher" "toggle"; }
+    Mod+E { spawn "nautilus"; }
 
     Mod+Q { close-window; }
     Mod+Shift+Q { quit; }
@@ -127,22 +127,22 @@ binds {
     Mod+BracketRight { expel-window-from-column; }
     Mod+Tab { focus-window-previous; }
 
-    Mod+V { toggle-window-floating; }
+    Mod+V { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print { spawn "dms" "screenshot" "region" "--format" "png" "--dir" "/home/kaleb/Pictures/Screenshots"; }
+    Ctrl+Print { spawn "dms" "screenshot" "full" "--format" "png" "--dir" "/home/kaleb/Pictures/Screenshots"; }
+    Alt+Print { spawn "dms" "screenshot" "window" "--format" "png" "--dir" "/home/kaleb/Pictures/Screenshots"; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Alt+L { spawn "swaylock" "-f"; }
+    Mod+Alt+L { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+Shift+P { power-off-monitors; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
-    XF86Favorites allow-when-locked=true { spawn "swayosd-client" "--playerctl" "play-pause"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "5"; }
+    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
+    XF86Favorites allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
 }
