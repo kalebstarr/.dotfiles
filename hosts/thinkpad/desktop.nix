@@ -14,6 +14,12 @@
     dsearch.enable = true;
   };
 
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+    configHome = "/home/kaleb";
+  };
+
   xdg.portal = {
     enable = true;
     config.common.default = [
