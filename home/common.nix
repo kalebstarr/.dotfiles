@@ -5,20 +5,20 @@ let
 in
 {
   imports = [
-    ../home-modules/shell/zsh.nix
-    ../home-modules/shell/starship.nix
-    ../home-modules/shell/fzf.nix
-    ../home-modules/shell/zoxide.nix
-    ../home-modules/shell/direnv.nix
-    ../home-modules/shell/scripts.nix
-    ../home-modules/git.nix
-    ../home-modules/ssh.nix
-    ../home-modules/tmux.nix
-    ../home-modules/esp32.nix
+    ./modules/shell/zsh.nix
+    ./modules/shell/starship.nix
+    ./modules/shell/fzf.nix
+    ./modules/shell/zoxide.nix
+    ./modules/shell/direnv.nix
+    ./modules/shell/scripts.nix
+    ./modules/git.nix
+    ./modules/ssh.nix
+    ./modules/tmux.nix
+    ./modules/esp32.nix
 
-    ../home-modules/terminal/ghostty.nix
+    ./modules/terminal/ghostty.nix
 
-    ../home-modules/nixvim
+    ./modules/nixvim
   ];
 
   home = {

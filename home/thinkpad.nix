@@ -5,9 +5,9 @@
   imports = [
     ./common.nix
 
-    ../home-modules/desktop/niri.nix
+    ./modules/desktop/niri.nix
 
-    ../home-modules/pi.nix
+    ./modules/pi.nix
   ];
 
   home.packages = with pkgs; [
