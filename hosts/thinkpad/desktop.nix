@@ -5,6 +5,7 @@
     playerctl
     pavucontrol
     pamixer
+    xwayland-satellite
   ];
 
   programs.niri.enable = true;
