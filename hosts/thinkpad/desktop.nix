@@ -8,7 +8,10 @@
     xwayland-satellite
   ];
 
-  programs.niri.enable = true;
+  programs = {
+    niri.enable = true;
+    dms-shell.enable = true;
+  };
 
   xdg.portal = {
     enable = true;
