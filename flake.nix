@@ -47,7 +47,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             hostModule
-            ./modules/common.nix
+            ./hosts/common.nix
           ]
           ++ extraModules
           ++ [
