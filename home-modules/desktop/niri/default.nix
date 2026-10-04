@@ -17,13 +17,7 @@ let
 in
 
 {
-  imports = [
-    ../waybar.nix
-    ./session.nix
-  ];
-
   home.packages = with pkgs; [
-    swaybg
     xwayland-satellite
   ];
 

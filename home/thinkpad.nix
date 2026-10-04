@@ -5,8 +5,6 @@
   imports = [
     ./common.nix
 
-    ../home-modules/terminal/foot.nix
-
     ../home-modules/desktop/niri
 
     ../home-modules/pi.nix
@@ -18,7 +16,6 @@
     legcord
     proton-vpn
     openvpn
-    godot
 
     noto-fonts
     noto-fonts-cjk-sans
