@@ -5,7 +5,7 @@
   imports = [
     ./common.nix
 
-    ../home-modules/desktop/niri
+    ../home-modules/desktop/niri.nix
 
     ../home-modules/pi.nix
   ];
@@ -24,10 +24,5 @@
     nerd-fonts.jetbrains-mono
     base16-schemes
   ];
-
-  stylix.targets = {
-    gtk.enable = true;
-    gnome.enable = true;
-  };
 
 }

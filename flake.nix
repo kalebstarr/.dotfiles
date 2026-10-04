@@ -20,11 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     llm-agents.url = "github:numtide/llm-agents.nix";
@@ -37,7 +32,6 @@
       home-manager,
       nixvim,
       nixos-wsl,
-      stylix,
       nixos-hardware,
       ...
     }@inputs:
@@ -67,7 +61,6 @@
                 backupFileExtension = "backup";
               };
             }
-            stylix.nixosModules.stylix
           ];
         };
     in
