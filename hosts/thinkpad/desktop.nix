@@ -11,6 +11,7 @@
   programs = {
     niri.enable = true;
     dms-shell.enable = true;
+    dsearch.enable = true;
   };
 
   xdg.portal = {
