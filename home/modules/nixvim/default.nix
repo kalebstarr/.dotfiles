@@ -26,6 +26,14 @@
 
     nixpkgs.source = inputs.nixpkgs;
 
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "mocha";
+        transparent_background = true;
+      };
+    };
+
     plugins = {
       web-devicons.enable = true;
     };
