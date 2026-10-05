@@ -16,6 +16,8 @@
     legcord
     proton-vpn
     openvpn
+    kdePackages.dolphin
+    papirus-folders
 
     base16-schemes
   ];
