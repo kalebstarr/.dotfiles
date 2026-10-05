@@ -5,26 +5,29 @@
   programs.tmux = {
     enable = true;
     shortcut = "a";
-    # aggressiveResize = true; -- Disabled to be iTerm-friendly
     baseIndex = 1;
-    newSession = true;
-    # Stop tmux+escape craziness.
     escapeTime = 0;
-    # Force tmux to use /tmp for sockets (WSL2 compat)
     secureSocket = false;
     mouse = true;
     clock24 = true;
     historyLimit = 50000;
+    terminal = "tmux-256color";
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_status_background "none"
+          set -g @catppuccin_window_status_style "none"
+        '';
+      }
     ];
 
     extraConfig = ''
       # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
-      set -g default-terminal "xterm-256color"
-      set -ga terminal-overrides ",*256col*:Tc"
-      set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+      set -as terminal-features ',xterm-ghostty:RGB'
       set-environment -g COLORTERM "truecolor"
 
       # easy-to-remember split pane commands
@@ -34,7 +37,6 @@
 
       set -s extended-keys on
       set -s extended-keys-format csi-u
-      set -as terminal-features 'xterm*:extkeys'
     '';
   };
 
