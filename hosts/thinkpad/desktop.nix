@@ -14,6 +14,7 @@
     pavucontrol
     pamixer
     xwayland-satellite
+    papirus-icon-theme
   ];
 
   programs = {
