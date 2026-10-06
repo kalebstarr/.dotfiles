@@ -12,10 +12,16 @@
     ./desktop.nix
   ];
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
+    };
   };
 
   # Use the systemd-boot EFI boot loader.
