@@ -6,8 +6,8 @@ let
 in
 {
   xdg.configFile = {
-    "niri/dms".source = link "${dotfiles}/home/config/niri/dms";
-
-    "niri/config.kdl".source = ../../config/niri/config.kdl;
+    "DankMaterialShell".source = link "${dotfiles}/home/config/dms";
+    "danksearch".source = link "${dotfiles}/home/config/danksearch";
   };
+
 }
