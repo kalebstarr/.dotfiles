@@ -27,7 +27,7 @@
 
     extraConfig = ''
       # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
-      set -as terminal-features ',xterm-ghostty:RGB'
+      set -as terminal-features ',*:RGB'
       set-environment -g COLORTERM "truecolor"
 
       # easy-to-remember split pane commands
