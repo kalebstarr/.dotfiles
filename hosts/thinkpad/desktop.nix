@@ -15,6 +15,7 @@
     pamixer
     xwayland-satellite
     papirus-icon-theme
+    bibata-cursors
   ];
 
   programs = {
