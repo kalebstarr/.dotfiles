@@ -56,10 +56,16 @@
       "id": "idleInhibitor",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "builtin_vpn",
+      "enabled": true,
+      "width": 50
     }
   ],
   "appIdSubstitutions": [],
   "spotlightBarShowModeChips": true,
+  "networkPreference": "wifi",
   "iconThemeDark": "Papirus-Dark",
   "iconThemeLight": "Papirus-Light",
   "iconThemePerMode": true,
