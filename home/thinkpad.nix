@@ -12,7 +12,7 @@
   ];
 
   home.packages = with pkgs; [
-    brave
+    brave-origin
     obsidian
     legcord
     proton-vpn
