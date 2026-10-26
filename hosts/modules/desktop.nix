@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   fonts.packages = with pkgs; [
@@ -27,7 +27,7 @@
   services.displayManager.dux-greeter = {
     enable = true;
     compositor.name = "niri";
-    configHome = "/home/kaleb";
+    configHome = config.users.users.kaleb.home;
   };
 
   xdg.portal = {

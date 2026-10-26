@@ -1,0 +1,3 @@
+# Per-machine files dms generates; each machine keeps its own copy
+home/config/niri/dms/outputs.kdl
+home/config/niri/dms/colors.kdl
