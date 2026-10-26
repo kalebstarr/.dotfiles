@@ -1,7 +1,7 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
-  "matugenScheme": "scheme-smart",
+  "matugenScheme": "scheme-tonal-spot",
   "floatingWindowSyncGlobal": false,
   "floatingWindowTransparency": 0.9,
   "mouseAccelProfile": "flat",
@@ -252,10 +252,13 @@
     },
     "dms_qr_generator": {
       "trigger": "qrg"
+    },
+    "dms_vpn": {
+      "trigger": ""
     }
   },
   "configVersion": 42,
-  "radiusStrength": 38,
+  "radiusStrength": 50,
   "dockConfigs": [
     {
       "id": "dock",
@@ -330,5 +333,10 @@
   ],
   "dmsWindowsFloatingSeeded": [
     "niri"
-  ]
+  ],
+  "popupTransparency": 0.9,
+  "blurBorderEnabled": false,
+  "blurBorderColor": "outline",
+  "blurLayerOutlineOpacity": 0,
+  "matugenSpec": "2025"
 }
