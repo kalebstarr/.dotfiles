@@ -6,8 +6,8 @@ let
 in
 {
   xdg.configFile = {
-    "DankMaterialShell".source = link "${dotfiles}/home/config/dms";
-    "danksearch".source = link "${dotfiles}/home/config/danksearch";
+    "dms".source = link "${dotfiles}/home/config/dms";
+    "dsearch".source = link "${dotfiles}/home/config/dsearch";
   };
 
 }

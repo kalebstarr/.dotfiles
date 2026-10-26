@@ -6,7 +6,7 @@
     ./common.nix
 
     ./modules/desktop/niri.nix
-    ./modules/desktop/dms.nix
+    ./modules/desktop/dux.nix
 
     ./modules/pi.nix
   ];
