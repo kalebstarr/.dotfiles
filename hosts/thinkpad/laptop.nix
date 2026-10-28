@@ -26,4 +26,6 @@
   services.udev.packages = with pkgs; [
     platformio-core.udev
   ];
+
+  services.resolved.enable = true;
 }

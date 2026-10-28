@@ -22,6 +22,7 @@
     niri.enable = true;
     dux-shell.enable = true;
     dux-search.enable = true;
+    openvpn3.enable = true;
   };
 
   services.displayManager.dux-greeter = {

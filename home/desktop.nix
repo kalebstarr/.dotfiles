@@ -11,7 +11,6 @@
     obsidian
     legcord
     proton-vpn
-    openvpn
     kdePackages.dolphin
     papirus-folders
 
