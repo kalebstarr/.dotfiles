@@ -134,7 +134,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     workspace-switch {
-        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=523 epsilon=0.0001
     }
     window-open {
         duration-ms 150
@@ -145,13 +145,13 @@ animations {
         curve "ease-out-quad"
     }
     horizontal-view-movement {
-        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=423 epsilon=0.0001
     }
     window-movement {
-        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=323 epsilon=0.0001
     }
     window-resize {
-        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=423 epsilon=0.0001
     }
     config-notification-open-close {
         spring damping-ratio=0.65 stiffness=923 epsilon=0.001
@@ -161,7 +161,7 @@ animations {
         curve "ease-out-quad"
     }
     overview-open-close {
-        spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
     }
 }
 // Window rules let you adjust behavior for individual windows.
