@@ -43,6 +43,8 @@
     ];
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
