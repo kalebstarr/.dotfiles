@@ -36,6 +36,8 @@ in
         lazygit
         devenv
         python3
+        proton-pass-cli
+        proton-drive-cli
       ])
       ++ (with llm-agents; [
         pi
