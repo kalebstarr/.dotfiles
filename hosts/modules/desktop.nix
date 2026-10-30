@@ -23,6 +23,10 @@
     dux-shell.enable = true;
     dux-search.enable = true;
     openvpn3.enable = true;
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
   };
 
   services.displayManager.dux-greeter = {
