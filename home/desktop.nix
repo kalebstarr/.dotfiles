@@ -17,5 +17,10 @@
     base16-schemes
   ];
 
-  home.sessionVariables.PROTON_PASS_LINUX_KEYRING = "dbus";
+  home.sessionPath = [ "$HOME/.local/bin" ];
+
+  home.sessionVariables = {
+    PROTON_PASS_LINUX_KEYRING = "dbus";
+    USE_BUILTIN_RIPGREP = "0";
+  };
 }
