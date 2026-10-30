@@ -2,16 +2,25 @@
 
 {
 
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "Kaleb";
-        email = "kaleb.starr@proton.me";
+  programs = {
+    git = {
+      enable = true;
+      settings = {
+        user = {
+          name = "Kaleb";
+          email = "kaleb.starr@proton.me";
+        };
+        core.editor = "vim";
+        init.defaultBranch = "main";
+        pull.rebase = true;
       };
-      core.editor = "vim";
-      init.defaultBranch = "main";
-      pull.rebase = true;
+    };
+    gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
+      };
     };
   };
 
