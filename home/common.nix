@@ -1,8 +1,5 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   imports = [
     ./modules/shell/zsh.nix
@@ -26,8 +23,9 @@ in
     homeDirectory = "/home/kaleb";
     stateVersion = "26.05";
 
-    packages =
-      (with pkgs; [
+    packages = (
+      with pkgs;
+      [
         htop
         fastfetch
         yazi
@@ -38,10 +36,8 @@ in
         python3
         proton-pass-cli
         proton-drive-cli
-      ])
-      ++ (with llm-agents; [
-        pi
-      ]);
+      ]
+    );
   };
 
   programs.home-manager.enable = true;
