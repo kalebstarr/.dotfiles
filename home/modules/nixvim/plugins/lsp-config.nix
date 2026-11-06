@@ -55,6 +55,10 @@
       jdtls = {
         enable = true;
         packageFallback = true;
+        settings.java = {
+          home.__raw = "vim.env.JAVA_HOME";
+          import.gradle.java.home.__raw = "vim.env.JAVA_HOME";
+        };
       };
     };
 
