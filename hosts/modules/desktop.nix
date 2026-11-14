@@ -49,6 +49,10 @@
 
   services.gnome.gnome-keyring.enable = true;
 
+  # Mount removable drives (e.g. NTFS external SSDs) without sudo
+  services.udisks2.enable = true;
+  boot.supportedFilesystems = [ "ntfs" ];
+
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
