@@ -68,6 +68,19 @@
         extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1 ];
       };
 
+      nixosConfigurations.blade = mkHost {
+        hostModule = ./hosts/blade;
+        homeModule = ./home/blade.nix;
+        extraModules = with nixos-hardware.nixosModules; [
+          common-cpu-amd
+          common-cpu-amd-pstate
+          common-gpu-amd
+          common-gpu-nvidia
+          common-pc-laptop
+          common-pc-laptop-ssd
+        ];
+      };
+
       nixosConfigurations.wsl = mkHost {
         hostModule = ./hosts/wsl;
         homeModule = ./home/wsl.nix;
