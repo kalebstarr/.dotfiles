@@ -61,14 +61,25 @@ in
     };
   };
 
-  # The HDMI port is wired to the NVIDIA dGPU. Render niri there so frames for the
-  # external display aren't drawn on the iGPU and copied across (adds latency).
-  # Costs power: the dGPU stays awake whenever niri runs, docked or not.
-  home-manager.users.kaleb.xdg.configFile."niri/host.kdl".text = ''
-    debug {
-        render-drm-device "/dev/dri/by-path/pci-0000:01:00.0-render"
-    }
-  '';
+  # The HDMI/DP ports are wired to the NVIDIA dGPU. When docked, render niri there so
+  # frames for the external display aren't drawn on the iGPU and copied across (adds
+  # latency). Undocked, leave niri on the iGPU so the dGPU can sleep.
+  # niri picks its render device only at startup, so this is decided per login:
+  # plugging in or unplugging mid-session takes effect at the next login.
+  systemd.user.services.niri.serviceConfig.ExecStartPre = toString (
+    pkgs.writeShellScript "niri-pick-render-device" ''
+      out="$HOME/.config/niri/host.kdl"
+      if grep -qx connected /sys/bus/pci/devices/0000:01:00.0/drm/card*/card*-*/status 2>/dev/null; then
+        printf '%s\n' \
+          '// Written by niri-pick-render-device at login: docked, rendering on the dGPU' \
+          'debug {' \
+          '    render-drm-device "/dev/dri/by-path/pci-0000:01:00.0-render"' \
+          '}' > "$out"
+      else
+        echo '// Written by niri-pick-render-device at login: undocked, default render device' > "$out"
+      fi
+    ''
+  );
 
   # R5: firmware for Intel AX210 Wi-Fi/Bluetooth and amdgpu
   hardware.enableRedistributableFirmware = true;

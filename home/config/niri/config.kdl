@@ -240,5 +240,5 @@ include optional=true "dms/cursor.kdl"
 include optional=true "dms/input.kdl"
 include "dms/windowrules.kdl"
 
-// Per-host overrides, written by the host's Nix config (e.g. hosts/blade/razer.nix)
+// Per-host overrides, written at login on hosts that need them (see hosts/blade/razer.nix)
 include optional=true "host.kdl"
