@@ -338,5 +338,6 @@
   "blurBorderEnabled": false,
   "blurBorderColor": "outline",
   "blurLayerOutlineOpacity": 0,
-  "matugenSpec": "2025"
+  "matugenSpec": "2025",
+  "displayProfileAutoSelect": true
 }
