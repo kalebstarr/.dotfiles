@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     brave-origin
     obsidian
-    legcord
+    discord
     proton-vpn
     kdePackages.dolphin
     papirus-folders
