@@ -74,6 +74,7 @@ in
     alsa-tools # hda-verb, for checking the headphone fix
     pciutils
     nvtopPackages.full
+    polychromatic # GUI/CLI for openrazer lighting
     powertop
   ];
 }
