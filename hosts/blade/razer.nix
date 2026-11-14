@@ -61,6 +61,15 @@ in
     };
   };
 
+  # The HDMI port is wired to the NVIDIA dGPU. Render niri there so frames for the
+  # external display aren't drawn on the iGPU and copied across (adds latency).
+  # Costs power: the dGPU stays awake whenever niri runs, docked or not.
+  home-manager.users.kaleb.xdg.configFile."niri/host.kdl".text = ''
+    debug {
+        render-drm-device "/dev/dri/by-path/pci-0000:01:00.0-render"
+    }
+  '';
+
   # R5: firmware for Intel AX210 Wi-Fi/Bluetooth and amdgpu
   hardware.enableRedistributableFirmware = true;
 
