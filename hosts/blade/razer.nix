@@ -1,5 +1,5 @@
 # Razer Blade 14 (2021, RZ09-0370): Ryzen 9 5900HX + RTX 3070 Mobile.
-# Everything Razer-specific lives here.
+# Everything Razer-specific lives here; the shared laptop base is ../modules/laptop.nix.
 { pkgs, lib, ... }:
 
 let
@@ -38,10 +38,6 @@ in
   '';
 
   # R4: AMD iGPU + NVIDIA dGPU in PRIME offload mode
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [
     "amdgpu"
@@ -65,9 +61,8 @@ in
     };
   };
 
-  # R5: firmware and radios (Intel AX210 Wi-Fi/Bluetooth, amdgpu)
+  # R5: firmware for Intel AX210 Wi-Fi/Bluetooth and amdgpu
   hardware.enableRedistributableFirmware = true;
-  hardware.bluetooth.enable = true;
 
   # R6: keyboard/logo lighting (1532:0270)
   hardware.openrazer = {

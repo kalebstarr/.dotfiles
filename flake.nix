@@ -64,13 +64,13 @@
     {
       nixosConfigurations.thinkpad = mkHost {
         hostModule = ./hosts/thinkpad;
-        homeModule = ./home/thinkpad.nix;
+        homeModule = ./home/laptop.nix;
         extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1 ];
       };
 
       nixosConfigurations.blade = mkHost {
         hostModule = ./hosts/blade;
-        homeModule = ./home/blade.nix;
+        homeModule = ./home/laptop.nix;
         extraModules = with nixos-hardware.nixosModules; [
           common-cpu-amd
           common-cpu-amd-pstate
