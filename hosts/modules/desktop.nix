@@ -41,13 +41,11 @@
 
   xdg.portal = {
     enable = true;
-    config.common = {
-      default = [
-        "gnome"
-        "gtk"
-      ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "dfiles" ];
-    };
+    config.common.default = [
+      "gnome"
+      "gtk"
+    ];
+    config.niri."org.freedesktop.impl.portal.FileChooser" = [ "dfiles" ];
     extraPortals = [
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
