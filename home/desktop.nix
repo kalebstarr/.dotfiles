@@ -11,7 +11,6 @@
     obsidian
     discord
     proton-vpn
-    kdePackages.dolphin
     papirus-folders
 
     base16-schemes

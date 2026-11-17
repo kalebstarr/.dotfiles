@@ -22,6 +22,10 @@
     niri.enable = true;
     dux-shell.enable = true;
     dux-search.enable = true;
+    dux-files = {
+      enable = true;
+      portal.enable = true;
+    };
     openvpn3.enable = true;
     appimage = {
       enable = true;
@@ -37,10 +41,13 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = [
-      "gnome"
-      "gtk"
-    ];
+    config.common = {
+      default = [
+        "gnome"
+        "gtk"
+      ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "dfiles" ];
+    };
     extraPortals = [
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
