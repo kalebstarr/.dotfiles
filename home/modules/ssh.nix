@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, ... }:
 
 {
 
@@ -6,20 +6,14 @@
     enable = true;
     enableDefaultConfig = false;
 
-    settings = {
-      "*" = {
-        AddKeysToAgent = "yes";
-        IdentityFile = "~/.ssh/id_ed25519";
-        ServerAliveInterval = 60;
-        ServerAliveCountMax = 3;
-      };
-      "github.com" = {
-        HostName = "github.com";
-        User = "git";
-        IdentityFile = "~/.ssh/id_ed25519";
-      };
-    };
+    settings."*".AddKeysToAgent = "yes";
   };
+
+  # Real file, not a store symlink: ssh rejects it inside appimage-run's user namespace.
+  home.file.".ssh/config".target = ".ssh/config.hm";
+  home.activation.sshConfig = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    run install -m 600 "$HOME/.ssh/config.hm" "$HOME/.ssh/config"
+  '';
 
   services.ssh-agent.enable = true;
 
